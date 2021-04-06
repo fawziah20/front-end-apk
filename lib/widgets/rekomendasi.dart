@@ -74,7 +74,7 @@ class Rekomendasi extends StatelessWidget {
                     height: 28,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/logo_bni.png'),
+                          image: AssetImage(perusahaan.gambar),
                           fit: BoxFit.cover),
                     ),
                   ),
