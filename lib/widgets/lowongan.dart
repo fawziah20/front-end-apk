@@ -7,8 +7,7 @@ class LowonganBaru extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
-      margin: EdgeInsets.symmetric(vertical: 12),
+      margin: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: Colors.white,
@@ -24,69 +23,68 @@ class LowonganBaru extends StatelessWidget {
         ],
       ),
       child: Container(
-        width: 320,
-        margin: EdgeInsets.fromLTRB(16, 16, 8, 8),
+        padding: EdgeInsets.fromLTRB(16, 16, 8, 8),
         child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ////162
-                Container(
-                  width: 42,
-                  height: 42,
-                  margin: EdgeInsets.only(bottom: 4),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/Logo.png'),
-                        fit: BoxFit.cover),
-                  ),
-                ),
-                Container(
-                  width: 231,
-                  height: 42,
-                  margin: EdgeInsets.only(bottom: 4, left: 5),
-                  child: Column(
-                    children: [
-                      Container(
-                        //14
-                        margin: EdgeInsets.only(top: 6),
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          lowongan.nama,
-                          style: TextStyle(fontSize: 10),
-                        ),
+                Row(
+                  children: [
+                    Container(
+                      width: 42,
+                      height: 42,
+                      margin: EdgeInsets.only(bottom: 4),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/logo_bni.png'),
+                            fit: BoxFit.cover),
                       ),
-                      Container(
-                        //20
-                        margin: EdgeInsets.only(bottom: 2),
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          lowongan.posisi,
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.bold),
-                        ),
+                    ),
+                    Container(
+                      height: 42,
+                      margin: EdgeInsets.only(bottom: 4),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 6),
+                            child: Text(
+                              lowongan.nama,
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ),
+                          Container(
+                            //20
+                            margin: EdgeInsets.only(bottom: 2),
+                            child: Text(
+                              lowongan.posisi,
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 10, ////344-236-26-42-5
+                    ),
+                  ],
                 ),
                 Container(
-                  alignment: Alignment.topRight,
                   width: 26,
                   height: 24,
-                  margin: EdgeInsets.only(bottom: 20),
+                  margin: EdgeInsets.only(bottom: 20, right: 10),
                   decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('assets/simpan_normal.png'),
                         fit: BoxFit.cover),
                   ),
-                )
+                ),
               ],
             ),
             Container(
-              width: 320,
               height: 50,
               child: Column(
                 children: [
@@ -98,7 +96,7 @@ class LowonganBaru extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'lowongan.gaji',
+                          'IDR 2.000.000',
                           style: TextStyle(fontSize: 12),
                         ),
                         Text(
@@ -110,40 +108,42 @@ class LowonganBaru extends StatelessWidget {
                   ),
                   Container(
                     child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          width: 26,
-                          height: 16,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: "E6EDF4".toColor()),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 3),
-                            child: Text(
-                              lowongan.pendidikan,
-                              style: TextStyle(fontSize: 10),
-                              textAlign: TextAlign.center,
+                        Row(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 3),
+                              height: 16,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: "E6EDF4".toColor()),
+                              child: Text(
+                                lowongan.pendidikan,
+                                style: TextStyle(fontSize: 10),
+                                textAlign: TextAlign.center,
+                              ),
                             ),
-                          ),
+                            Container(
+                              height: 16,
+                              margin: EdgeInsets.only(left: 8, right: 10),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 15, vertical: 3),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: "E6EDF4".toColor()),
+                              child: Text(
+                                lowongan.jamkerja,
+                                style: TextStyle(fontSize: 10),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
                         ),
                         Container(
-                          width: 66,
-                          height: 16,
-                          margin: EdgeInsets.only(left: 8, right: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: "E6EDF4".toColor()),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 3),
-                            child: Text(
-                              lowongan.jamkerja,
-                              style: TextStyle(fontSize: 10),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 200,
+                          margin: EdgeInsets.only(right: 13),
                           height: 16,
                           alignment: Alignment.bottomRight,
                           child: Text(

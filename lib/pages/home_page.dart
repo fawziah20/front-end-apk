@@ -15,11 +15,14 @@ class _HomePageState extends State<HomePage> {
       child: ListView(
         children: [
           Column(
+            mainAxisSize: MainAxisSize.max,
             children: [
               Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Container(
-                    width: 200,
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(top: 32, left: 24),
                     child: Text(
@@ -29,10 +32,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    width: 144,
-                    height: 20,
-                    alignment: Alignment.bottomRight,
-                    margin: EdgeInsets.only(top: 24),
+                    padding: EdgeInsets.only(right: 24),
                     child: Text(
                       "Lihat Semua",
                       style: TextStyle(
@@ -45,16 +45,14 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 10,
-                ),
+                margin: EdgeInsets.symmetric(horizontal: 24),
                 height: 172,
                 width: double.infinity,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
                     Row(
+                      mainAxisSize: MainAxisSize.max,
                       children: mockPerusahaan
                           .map((e) => Rekomendasi(perusahaan: e))
                           .toList(),
