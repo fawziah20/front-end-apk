@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:latihan1/widgets/widgets.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:latihan1/models/models.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 part 'main_page.dart';
 part 'general_page.dart';
@@ -18,3 +19,5 @@ part 'perusahaan_detail_page.dart';
 part 'illustration_page.dart';
 part 'bookmark_page.dart';
 part 'profil_page.dart';
+part 'profile_page.dart';
+part "general_profile_page.dart";

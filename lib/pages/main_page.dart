@@ -62,7 +62,7 @@ class _MainPageState extends State<MainPage> {
             children: [
               HomePage(),
               BookmarkPage(),
-              ProfilPage(),
+              ProfilePage(),
             ],
           )),
           Align(
