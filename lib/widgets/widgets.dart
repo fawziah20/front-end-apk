@@ -11,3 +11,5 @@ part 'custom_bottom_navbar.dart';
 part 'rekomendasi.dart';
 part 'lowongan.dart';
 part 'custom_sidebar.dart';
+part 'custom_tabbar.dart';
+part 'perusahaan_list.dart';
