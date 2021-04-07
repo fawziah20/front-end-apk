@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:latihan1/widgets/widgets.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:latihan1/models/models.dart';
+import 'package:flutter/foundation.dart';
 
 part 'main_page.dart';
 part 'general_page.dart';

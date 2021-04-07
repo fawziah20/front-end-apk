@@ -11,60 +11,49 @@ class _LamaranSuksesState extends State<LamaranSukses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: "75A6FF".toColor(),
       body: Stack(
         children: [
           ////Body
-          Container(
-            margin: EdgeInsets.only(top: 80),
-            height: double.infinity,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(16), topRight: Radius.circular(16)),
-              color: Colors.white,
-            ),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  ////Body Atas
-                  Container(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              alignment: Alignment.center,
-                              width: 120,
-                              height: 120,
-                              margin: EdgeInsets.only(bottom: 20),
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/berhasil_lamaran.png'),
-                                    fit: BoxFit.contain),
-                              ),
+          Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                ////Body Atas
+                Container(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            alignment: Alignment.center,
+                            width: 120,
+                            height: 120,
+                            margin: EdgeInsets.only(bottom: 20),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image:
+                                      AssetImage('assets/berhasil_lamaran.png'),
+                                  fit: BoxFit.contain),
                             ),
-                            Text(
-                              "Kamu Berhasil Melamar",
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
-                            ),
-                            Text("Semoga Kamu Lolos Ke Tahap Selanjutnya")
-                          ],
-                        )
-                      ],
-                    ),
+                          ),
+                          Text(
+                            "Kamu Berhasil Melamar",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          Text("Semoga Kamu Lolos Ke Tahap Selanjutnya")
+                        ],
+                      )
+                    ],
                   ),
-                ]),
-          ),
+                ),
+              ]),
           ////Bottom
           Align(
             alignment: Alignment.bottomCenter,

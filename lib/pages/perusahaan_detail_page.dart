@@ -1,6 +1,13 @@
 part of 'pages.dart';
 
-class PerusahaanDetailPage extends StatelessWidget {
+class PerusahaanDetailPage extends StatefulWidget {
+  @override
+  _PerusahaanDetailPageState createState() => _PerusahaanDetailPageState();
+}
+
+class _PerusahaanDetailPageState extends State<PerusahaanDetailPage> {
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -8,87 +15,170 @@ class PerusahaanDetailPage extends StatelessWidget {
         ListView(
           children: [
             Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(
-                vertical: 12,
-                horizontal: 24,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(8),
+                    bottomRight: Radius.circular(8)),
+                color: "75A6FF".toColor(),
               ),
+              height: 200,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                        margin: EdgeInsets.only(left: 24, top: 24),
+                        width: 32,
+                        height: 32,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: "528FFF".toColor(),
-                        ),
-                        child: Text(
-                          "Deskripsi",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
+                          image: DecorationImage(
+                            image: AssetImage('assets/kembali.png'),
+                            fit: BoxFit.contain,
                           ),
                         ),
                       ),
+                      SizedBox(),
                       Container(
-                        margin: EdgeInsets.only(left: 12),
-                        padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                        margin: EdgeInsets.only(right: 24, top: 24),
+                        width: 32,
+                        height: 32,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: "E6EDF4".toColor(),
-                        ),
-                        child: Text(
-                          "Fasilitas",
-                          style: TextStyle(
-                            fontSize: 12,
+                          image: DecorationImage(
+                            image: AssetImage('assets/share.png'),
+                            fit: BoxFit.contain,
                           ),
                         ),
                       ),
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 16),
-                    child: Text(
-                      "Syarat Umum",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    margin: EdgeInsets.only(left: 24, top: 32),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 88,
+                          height: 88,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/logo_tokped.png'),
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 8, top: 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(height: 20, child: Text("Tokopedia")),
+                              Container(
+                                height: 22,
+                                child: Text(
+                                  "Senior UI/UX Designer",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18),
+                                ),
+                              ),
+                              Container(
+                                height: 16,
+                                child: Text(
+                                  "Gaji disembunyikan",
+                                  style: TextStyle(fontSize: 12),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 3, horizontal: 15),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: "4A81E7".toColor(),
+                                ),
+                                child: Text(
+                                  "Full Time",
+                                  style: TextStyle(fontSize: 8),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 4),
-                    child: Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum.",
-                      style: TextStyle(
-                        fontSize: 12,
-                      ),
-                    ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 14, right: 24),
+              width: double.infinity,
+              child: Column(
+                children: [
+                  CustomTabbar(
+                    titles: ['Deskripsi', 'Fasilitas'],
+                    selectedIndex: selectedIndex,
+                    onTap: (index) {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 8),
-                    child: Text(
-                      "Syarat Khusus",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  SizedBox(
+                    height: 20,
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 4),
-                    padding: EdgeInsets.only(bottom: 50),
-                    child: Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum.",
-                      style: TextStyle(
-                        fontSize: 12,
-                      ),
-                    ),
-                  ),
+                  Builder(builder: (_) {
+                    String judul1 =
+                        (selectedIndex == 0) ? 'Syarat Umum' : 'Fasilitas';
+                    String judul2 = (selectedIndex == 0) ? 'Syarat Khusus' : '';
+                    String isi1 = (selectedIndex == 0)
+                        ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum.'
+                        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. ';
+                    String isi2 = (selectedIndex == 0)
+                        ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius aenean neque eget turpis id in. Commodo, nec eget blandit cras ante lectus. Amet elit nulla sed commodo sit integer. Nibh consequat donec nunc, dolor sed egestas. Morbi egestas ridiculus sollicitudin condimentum arcu bibendum. Posuere vel tortor, ac congue sapien ac dictum sed neque. Enim ullamcorper diam est dictum.'
+                        : '';
+                    return Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            judul1,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10, bottom: 8),
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            isi1,
+                            style: TextStyle(fontSize: 12),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            judul2,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(bottom: 60),
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            isi2,
+                            style: TextStyle(fontSize: 12),
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                      ],
+                    );
+                  })
                 ],
               ),
             )
