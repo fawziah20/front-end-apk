@@ -19,6 +19,8 @@ class _MainPageState extends State<MainPage> {
         child: CustomSidebar(),
       ),
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: "528FFF".toColor(),
         title: Container(
             alignment: Alignment.center,
             child: Builder(builder: (_) {

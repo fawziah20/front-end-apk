@@ -33,7 +33,9 @@ class GenProfilePage extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: orientation == Orientation.portrait ? 60 : 20,
+                  top: orientation == Orientation.portrait
+                      ? MediaQuery.of(context).size.height * 0.05
+                      : 20,
                   child: Text(
                     title,
                     style: blackFontStyle.copyWith(

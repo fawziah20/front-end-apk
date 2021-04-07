@@ -62,12 +62,15 @@ class GeneralPageAwal extends StatelessWidget {
                 ],
               ),
               Container(
-                      height: MediaQuery.of(context).size.height * 0.203,
+                      height: MediaQuery.of(context).size.height * 0.119,
                       alignment: Alignment.bottomCenter,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(teks1),
+                          Text(
+                            teks1,
+                            style: TextStyle(fontSize: 12),
+                          ),
                           // Text("Belum memiliki akun ? "),
                           TextButton(
                               onPressed: () {},
@@ -77,7 +80,8 @@ class GeneralPageAwal extends StatelessWidget {
                                 //   "Daftar sekarang",
                                 style: TextStyle(
                                     decoration: TextDecoration.underline,
-                                    color: greyColor3),
+                                    color: greyColor3,
+                                    fontSize: 12),
                               ))
                         ],
                       )) ??

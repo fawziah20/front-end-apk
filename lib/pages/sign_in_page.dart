@@ -11,6 +11,7 @@ class _SignInPageState extends State<SignInPage> {
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
     bool isLoading = false;
 
     return GeneralPageAwal(
@@ -18,7 +19,9 @@ class _SignInPageState extends State<SignInPage> {
       teks1: "Belum Memiliki Akun ?",
       teks2: "Daftar Sekarang",
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.65,
+        height: orientation == Orientation.portrait
+            ? MediaQuery.of(context).size.height * 0.70
+            : 470,
         child: Column(
           children: [
             Container(
@@ -27,12 +30,14 @@ class _SignInPageState extends State<SignInPage> {
               child: Text(
                 "Selamat Datang :)",
                 style: blackFontStyle.copyWith(
-                    fontWeight: FontWeight.bold, color: blueColors),
+                    fontWeight: FontWeight.bold,
+                    color: blueColors,
+                    fontSize: 20),
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(
-                  defaultMargin, 2, defaultMargin, defaultMargin),
+              // margin: EdgeInsets.fromLTRB(
+              //     defaultMargin, 2, defaultMargin, defaultMargin),
               child: Column(
                 children: [
                   // TextField()
@@ -43,15 +48,17 @@ class _SignInPageState extends State<SignInPage> {
                       decoration: InputDecoration(
                         icon: CircleAvatar(
                           backgroundColor: blueColors,
-                          radius: 18,
+                          radius: 15,
                           child: Icon(
                             Icons.alternate_email,
                             color: Colors.white,
+                            size: 20,
                           ),
                           // child:Icons.alternate_email_rounded,
                           // color: Colors.blue,
                         ),
-                        hintStyle: greyFontStyle.copyWith(color: greyColor3),
+                        hintStyle: greyFontStyle.copyWith(
+                            color: greyColor3, fontSize: 14),
                         hintText: "emailkamu@gmail.com",
                       ),
                     ),
@@ -64,10 +71,11 @@ class _SignInPageState extends State<SignInPage> {
                       decoration: InputDecoration(
                         icon: CircleAvatar(
                           backgroundColor: blueColors,
-                          radius: 18,
+                          radius: 15,
                           child: Icon(
                             Icons.lock_outline,
                             color: Colors.white,
+                            size: 20,
                           ),
                         ),
                         suffixIcon: IconButton(
@@ -80,7 +88,8 @@ class _SignInPageState extends State<SignInPage> {
                                 _isObscure = !_isObscure;
                               });
                             }),
-                        hintStyle: greyFontStyle.copyWith(color: greyColor3),
+                        hintStyle: greyFontStyle.copyWith(
+                            color: greyColor3, fontSize: 14),
                         hintText: "password kamu",
                       ),
                     ),
@@ -88,7 +97,7 @@ class _SignInPageState extends State<SignInPage> {
 
                   Container(
                     width: double.infinity,
-                    height: 50,
+                    height: 40,
                     margin: EdgeInsets.only(top: 16),
                     child: Container(
                       child: RaisedButton(
@@ -109,12 +118,12 @@ class _SignInPageState extends State<SignInPage> {
                                 borderRadius: BorderRadius.circular(8)),
                             child: Container(
                               width: double.infinity,
-                              height: 50,
+                              height: 40,
                               alignment: Alignment.center,
                               child: Text(
                                 'Masuk',
-                                style: blackFontStyle.copyWith(
-                                    color: Colors.white),
+                                style: blackFontStyle3.copyWith(
+                                    color: Colors.white, fontSize: 16),
                               ),
                             ),
                           )),
@@ -128,14 +137,18 @@ class _SignInPageState extends State<SignInPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Lupa Password ?"),
+                        Text(
+                          "Lupa Password ?",
+                          style: TextStyle(fontSize: 12),
+                        ),
                         TextButton(
                             onPressed: () {},
                             child: Text(
                               "Reset Password",
                               style: TextStyle(
                                   decoration: TextDecoration.underline,
-                                  color: greyColor3),
+                                  color: greyColor3,
+                                  fontSize: 12),
                             ))
                       ],
                     ),
@@ -164,7 +177,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   Container(
                       width: double.infinity,
-                      height: 50,
+                      height: 40,
                       margin: EdgeInsets.only(top: 16),
                       child: Container(
                         child: RaisedButton(
@@ -209,10 +222,10 @@ class _SignInPageState extends State<SignInPage> {
                                 child: Text(
                                   'Masuk Dengan Google',
                                   style: blackFontStyle.copyWith(
-                                      color: Colors.white, fontSize: 16),
+                                      color: Colors.white, fontSize: 14),
                                 ),
                               ),
-                              Expanded(flex: 2, child: SizedBox())
+                              Expanded(flex: 2, child: Container())
                             ],
                           ),
                         ),
