@@ -16,6 +16,7 @@ class GenProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
     return Scaffold(
       body: ListView(
         children: [
@@ -32,7 +33,7 @@ class GenProfilePage extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: 70,
+                  top: orientation == Orientation.portrait ? 60 : 20,
                   child: Text(
                     title,
                     style: blackFontStyle.copyWith(
@@ -47,8 +48,8 @@ class GenProfilePage extends StatelessWidget {
                     overflow: Overflow.visible,
                     children: [
                       Container(
-                        width: 160,
-                        height: 160,
+                        width: orientation == Orientation.portrait ? 150 : 100,
+                        height: orientation == Orientation.portrait ? 150 : 100,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -56,8 +57,10 @@ class GenProfilePage extends StatelessWidget {
                           shape: BoxShape.rectangle,
                         ),
                         child: Container(
-                          width: 160,
-                          height: 160,
+                          width:
+                              orientation == Orientation.portrait ? 150 : 100,
+                          height:
+                              orientation == Orientation.portrait ? 150 : 100,
                           decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
                               borderRadius: BorderRadius.circular(4),

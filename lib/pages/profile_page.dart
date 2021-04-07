@@ -14,9 +14,7 @@ class _ProfilePageState extends State<ProfilePage> {
       child: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.079,
-          ),
-          Container(
+            margin: EdgeInsets.only(top: 60),
             height: 20,
             width: 120,
             decoration: BoxDecoration(
@@ -26,13 +24,14 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Center(
               child: Text(
                 "Pencari Kerja",
-                style: blackFontStyle3.copyWith(color: Colors.white),
+                style:
+                    blackFontStyle3.copyWith(color: Colors.white, fontSize: 10),
               ),
             ),
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 10, 30, 10),
+            margin: EdgeInsets.fromLTRB(defaultMargin, 10, 30, 100),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +51,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     label: Text(
                       "    Informasi Profil",
                       style: blackFontStyle3.copyWith(
-                          fontWeight: FontWeight.bold, fontSize: 18),
+                          fontWeight: FontWeight.bold, fontSize: 14),
                     )),
                 TextButton.icon(
                     onPressed: () {},
@@ -69,7 +68,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     label: Text(
                       "    Ganti Password",
                       style: blackFontStyle3.copyWith(
-                          fontWeight: FontWeight.bold, fontSize: 18),
+                          fontWeight: FontWeight.bold, fontSize: 14),
                     )),
                 TextButton.icon(
                     onPressed: () {},
@@ -86,7 +85,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     label: Text(
                       "    Keluar",
                       style: blackFontStyle3.copyWith(
-                          fontWeight: FontWeight.bold, fontSize: 18),
+                          fontWeight: FontWeight.bold, fontSize: 14),
                     )),
               ],
             ),
