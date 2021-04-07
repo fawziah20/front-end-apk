@@ -113,7 +113,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             color: _isObscureverif ? blueColors : greyColor3,
                             onPressed: () {
                               setState(() {
-                                _isObscure = !_isObscure;
+                                _isObscureverif = !_isObscureverif;
                               });
                             }),
                         hintStyle: greyFontStyle.copyWith(
@@ -128,7 +128,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     margin: EdgeInsets.only(top: 16),
                     child: Container(
                       child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(CompleteSignUp());
+                          },
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
