@@ -22,127 +22,121 @@ class _LamaranState extends State<Lamaran> {
       backgroundColor: "75A6FF".toColor(),
       body: Stack(
         children: [
-          ////Top
-          SizedBox(
-            height: 40,
-          ),
           ////Body
-          SafeArea(
-            child: Container(
-              margin: EdgeInsets.only(top: 40),
-              height: double.infinity,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16)),
-                color: Colors.white,
-              ),
-              child: Column(
-                children: [
-                  ////Body Atas
-                  Container(
-                    height: 50,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(),
-                        Text(
+          Container(
+            margin: EdgeInsets.only(top: 80),
+            height: double.infinity,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16), topRight: Radius.circular(16)),
+              color: Colors.white,
+            ),
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: [
+                ////Body Atas
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(),
+                      Container(
+                        padding: EdgeInsets.only(left: 50),
+                        child: Text(
                           "Kirim Lamaran",
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
-                        Container(
-                          width: 40,
-                          height: 40,
-                          alignment: Alignment.topRight,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage('assets/close.png'))),
-                        ),
-                      ],
-                    ),
+                      ),
+                      Container(
+                        width: 40,
+                        height: 40,
+                        alignment: Alignment.topRight,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/close.png'))),
+                      ),
+                    ],
                   ),
-                  ////Body Tengah
-                  Container(
-                    height: 650,
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-                          child: Text(
-                            "Upload CV KAMU",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
+                ),
+                ////Body Tengah
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                        child: Text(
+                          "Upload CV KAMU",
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.fromLTRB(15, 10, 130, 10),
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(width: 1, color: Colors.black),
+                                borderRadius: BorderRadius.circular(8)),
+                            child: Text(
+                              "Upload file CV kamu",
+                              style: TextStyle(color: "808D9D".toColor()),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 12, horizontal: 12),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: "528FFF".toColor(),
+                            ),
+                            child: Text(
+                              "Pilih File",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                        padding: EdgeInsets.only(bottom: 60),
+                        child: Column(
                           children: [
                             Container(
-                              padding: EdgeInsets.fromLTRB(15, 10, 130, 10),
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 1, color: Colors.black),
-                                  borderRadius: BorderRadius.circular(8)),
-                              child: Text(
-                                "Upload file CV kamu",
-                                style: TextStyle(color: "808D9D".toColor()),
-                              ),
-                            ),
+                                alignment: Alignment.topLeft,
+                                margin: EdgeInsets.only(bottom: 10),
+                                child: Text(
+                                  "Surat Lamaran Kerja",
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                )),
                             Container(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 12, horizontal: 12),
+                              padding: EdgeInsets.symmetric(horizontal: 15),
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                color: "528FFF".toColor(),
+                                  borderRadius: BorderRadius.circular(8),
+                                  color: "F4F9F9".toColor()),
+                              child: TextField(
+                                maxLines: 22,
+                                decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText:
+                                        "Ketikkan surat lamaran kerja kamu"),
                               ),
-                              child: Text(
-                                "Pilih File",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
+                            )
                           ],
                         ),
-                        Container(
-                          height: 550,
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-                          child: Column(
-                            children: [
-                              Container(
-                                  alignment: Alignment.topLeft,
-                                  margin: EdgeInsets.only(bottom: 10),
-                                  child: Text(
-                                    "Surat Lamaran Kerja",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  )),
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 15),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    color: "F4F9F9".toColor()),
-                                child: TextField(
-                                  maxLines: 25,
-                                  decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText:
-                                          "Ketikkan surat lamaran kerja kamu"),
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                      )
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           ////Bottom

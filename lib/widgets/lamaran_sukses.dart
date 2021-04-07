@@ -14,14 +14,9 @@ class _LamaranSuksesState extends State<LamaranSukses> {
       backgroundColor: "75A6FF".toColor(),
       body: Stack(
         children: [
-          ////Top
-          SizedBox(
-            height: 40,
-          ),
           ////Body
-          SafeArea(
-              child: Container(
-            margin: EdgeInsets.only(top: 40),
+          Container(
+            margin: EdgeInsets.only(top: 80),
             height: double.infinity,
             width: double.infinity,
             decoration: BoxDecoration(
@@ -29,42 +24,47 @@ class _LamaranSuksesState extends State<LamaranSukses> {
                   topLeft: Radius.circular(16), topRight: Radius.circular(16)),
               color: Colors.white,
             ),
-            child: Column(children: [
-              ////Body Atas
-              Container(
-                height: 640,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Column(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  ////Body Atas
+                  Container(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: 120,
-                          height: 120,
-                          margin: EdgeInsets.only(bottom: 20),
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image:
-                                    AssetImage('assets/berhasil_lamaran.png'),
-                                fit: BoxFit.contain),
-                          ),
-                        ),
-                        Text(
-                          "Kamu Berhasil Melamar",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        Text("Semoga Kamu Lolos Ke Tahap Selanjutnya")
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              width: 120,
+                              height: 120,
+                              margin: EdgeInsets.only(bottom: 20),
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/berhasil_lamaran.png'),
+                                    fit: BoxFit.contain),
+                              ),
+                            ),
+                            Text(
+                              "Kamu Berhasil Melamar",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                            Text("Semoga Kamu Lolos Ke Tahap Selanjutnya")
+                          ],
+                        )
                       ],
-                    )
-                  ],
-                ),
-              ),
-            ]),
-          )),
+                    ),
+                  ),
+                ]),
+          ),
           ////Bottom
           Align(
             alignment: Alignment.bottomCenter,
