@@ -3,6 +3,7 @@ part of 'pages.dart';
 class IllustrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
     return Container(
         alignment: Alignment.center,
         child: Column(
@@ -11,8 +12,8 @@ class IllustrationPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: 200,
-              height: 200,
+              width: orientation == Orientation.portrait ? 200 : 140,
+              height: orientation == Orientation.portrait ? 200 : 140,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('assets/maaf.png'), fit: BoxFit.cover),
@@ -31,7 +32,7 @@ class IllustrationPage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 24),
+              margin: EdgeInsets.only(top: 24, bottom: 24),
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 125),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),

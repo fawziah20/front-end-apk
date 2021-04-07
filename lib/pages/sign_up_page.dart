@@ -1,23 +1,25 @@
 part of "pages.dart";
 
-class SignInPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  _SignInPageState createState() => _SignInPageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignUpPageState extends State<SignUpPage> {
   bool _isObscure = true;
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  bool _isObscureverif = true;
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+  TextEditingController passwordverif = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
     bool isLoading = false;
-
+    var color2 = "828282".toColor();
     return GeneralPageAwal(
-      title: "Log In",
-      teks1: "Belum Memiliki Akun ?",
-      teks2: "Daftar Sekarang",
+      title: "Register",
+      teks1: "Sudah Punya Akun ?",
+      teks2: "Register",
       child: Container(
         height: orientation == Orientation.portrait
             ? MediaQuery.of(context).size.height * 0.70
@@ -28,7 +30,7 @@ class _SignInPageState extends State<SignInPage> {
               margin: EdgeInsets.fromLTRB(
                   defaultMargin, 28, defaultMargin, defaultMargin),
               child: Text(
-                "Selamat Datang :)",
+                "Buat Akun Baru",
                 style: blackFontStyle.copyWith(
                     fontWeight: FontWeight.bold,
                     color: blueColors,
@@ -44,16 +46,13 @@ class _SignInPageState extends State<SignInPage> {
                   Container(
                     width: double.infinity,
                     child: TextField(
-                      controller: emailController,
+                      controller: email,
                       decoration: InputDecoration(
                         icon: CircleAvatar(
                           backgroundColor: blueColors,
                           radius: 15,
-                          child: Icon(
-                            Icons.alternate_email,
-                            color: Colors.white,
-                            size: 20,
-                          ),
+                          child: Icon(Icons.alternate_email,
+                              color: Colors.white, size: 20),
                           // child:Icons.alternate_email_rounded,
                           // color: Colors.blue,
                         ),
@@ -67,7 +66,7 @@ class _SignInPageState extends State<SignInPage> {
                     margin: EdgeInsets.only(top: 10),
                     child: TextField(
                       obscureText: _isObscure,
-                      controller: passwordController,
+                      controller: password,
                       decoration: InputDecoration(
                         icon: CircleAvatar(
                           backgroundColor: blueColors,
@@ -75,7 +74,6 @@ class _SignInPageState extends State<SignInPage> {
                           child: Icon(
                             Icons.lock_outline,
                             color: Colors.white,
-                            size: 20,
                           ),
                         ),
                         suffixIcon: IconButton(
@@ -94,7 +92,36 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                   ),
-
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: TextField(
+                      obscureText: _isObscureverif,
+                      controller: passwordverif,
+                      decoration: InputDecoration(
+                        icon: CircleAvatar(
+                          backgroundColor: blueColors,
+                          radius: 15,
+                          child: Icon(
+                            Icons.lock_outline,
+                            color: Colors.white,
+                          ),
+                        ),
+                        suffixIcon: IconButton(
+                            icon: Icon(_isObscureverif
+                                ? Icons.visibility
+                                : Icons.visibility_off),
+                            color: _isObscureverif ? blueColors : greyColor3,
+                            onPressed: () {
+                              setState(() {
+                                _isObscureverif = !_isObscureverif;
+                              });
+                            }),
+                        hintStyle: greyFontStyle.copyWith(
+                            color: greyColor3, fontSize: 14),
+                        hintText: " Ulangi password kamu",
+                      ),
+                    ),
+                  ),
                   Container(
                     width: double.infinity,
                     height: 40,
@@ -102,7 +129,7 @@ class _SignInPageState extends State<SignInPage> {
                     child: Container(
                       child: RaisedButton(
                           onPressed: () {
-                            Get.to(SignUpPage());
+                            Get.to(CompleteSignUp());
                           },
                           elevation: 0,
                           shape: RoundedRectangleBorder(
@@ -121,40 +148,16 @@ class _SignInPageState extends State<SignInPage> {
                               height: 40,
                               alignment: Alignment.center,
                               child: Text(
-                                'Masuk',
-                                style: blackFontStyle3.copyWith(
+                                'Buat Akun',
+                                style: blackFontStyle.copyWith(
                                     color: Colors.white, fontSize: 16),
                               ),
                             ),
                           )),
                     ),
                   ),
-
                   Container(
-                    margin: EdgeInsets.only(top: 12),
-                    height: 35,
-                    width: double.infinity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Lupa Password ?",
-                          style: TextStyle(fontSize: 12),
-                        ),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              "Reset Password",
-                              style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  color: greyColor3,
-                                  fontSize: 12),
-                            ))
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 52),
+                    margin: EdgeInsets.only(top: 40),
                     width: double.infinity,
                     child: Row(
                       children: [
@@ -220,29 +223,22 @@ class _SignInPageState extends State<SignInPage> {
                               Expanded(
                                 flex: 7,
                                 child: Text(
-                                  'Masuk Dengan Google',
+                                  'Register Dengan Google',
                                   style: blackFontStyle.copyWith(
                                       color: Colors.white, fontSize: 14),
                                 ),
                               ),
-                              Expanded(flex: 2, child: Container())
+                              Expanded(flex: 1, child: SizedBox())
                             ],
                           ),
                         ),
                       )),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),
     );
   }
-}
-
-Expanded buildDivider() {
-  return Expanded(
-      child: Divider(
-    height: 3,
-  ));
 }
