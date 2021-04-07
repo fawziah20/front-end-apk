@@ -44,27 +44,21 @@ class _LamaranState extends State<Lamaran> {
                   Container(
                     height: 50,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(
-                          width: 130,
-                        ),
+                        SizedBox(),
                         Text(
                           "Kirim Lamaran",
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
-                          width: 90,
-                        ),
-                        SafeArea(
-                          child: Container(
-                            width: 40,
-                            height: 40,
-                            alignment: Alignment.topRight,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('assets/close.png'))),
-                          ),
+                        Container(
+                          width: 40,
+                          height: 40,
+                          alignment: Alignment.topRight,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/close.png'))),
                         ),
                       ],
                     ),
@@ -86,9 +80,10 @@ class _LamaranState extends State<Lamaran> {
                           ),
                         ),
                         Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              margin: EdgeInsets.symmetric(horizontal: 5),
                               padding: EdgeInsets.fromLTRB(15, 10, 130, 10),
                               decoration: BoxDecoration(
                                   border:
@@ -100,7 +95,6 @@ class _LamaranState extends State<Lamaran> {
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.only(left: 5),
                               padding: EdgeInsets.symmetric(
                                   vertical: 12, horizontal: 12),
                               decoration: BoxDecoration(

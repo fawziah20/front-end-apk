@@ -41,7 +41,7 @@ class LowonganBaru extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: 4),
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('assets/logo_bni.png'),
+                            image: AssetImage(lowongan.gambar),
                             fit: BoxFit.cover),
                       ),
                     ),
