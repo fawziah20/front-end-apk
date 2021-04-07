@@ -7,6 +7,7 @@ class IllustrationPage extends StatelessWidget {
     return Container(
         alignment: Alignment.center,
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

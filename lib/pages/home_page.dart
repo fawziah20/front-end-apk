@@ -45,7 +45,6 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 24),
                 height: 172,
                 width: double.infinity,
                 child: ListView(
@@ -54,7 +53,11 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: mockPerusahaan
-                          .map((e) => Rekomendasi(perusahaan: e))
+                          .map((e) => Padding(
+                                padding: EdgeInsets.only(
+                                    left: (e == mockPerusahaan.first) ? 24 : 0),
+                                child: Rekomendasi(perusahaan: e),
+                              ))
                           .toList(),
                     ),
                   ],
