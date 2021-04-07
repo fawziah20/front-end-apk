@@ -92,7 +92,9 @@ class _SignInPageState extends State<SignInPage> {
                     margin: EdgeInsets.only(top: 16),
                     child: Container(
                       child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(MainPage());
+                          },
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
