@@ -1,6 +1,6 @@
 part of 'models.dart';
 
-class Perusahaan {
+class Perusahaan extends Equatable {
   final int id;
   final String nama;
   final String gambar;
@@ -27,6 +27,22 @@ class Perusahaan {
       this.syaratumum,
       this.syaratkhusus,
       this.fasilitas});
+
+  @override
+  List<Object> get props => [
+        id,
+        nama,
+        gambar,
+        posisi,
+        gaji,
+        alamat,
+        pendidikan,
+        jamkerja,
+        deadline,
+        syaratumum,
+        syaratkhusus,
+        fasilitas,
+      ];
 }
 
 List<Perusahaan> mockPerusahaan = [
