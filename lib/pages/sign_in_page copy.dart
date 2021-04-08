@@ -1,11 +1,11 @@
 part of "pages.dart";
 
-class SignInPage extends StatefulWidget {
+class Coba extends StatefulWidget {
   @override
-  _SignInPageState createState() => _SignInPageState();
+  _CobaState createState() => _CobaState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _CobaState extends State<Coba> {
   bool _isObscure = true;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -27,6 +27,17 @@ class _SignInPageState extends State<SignInPage> {
     bool isLoading = false;
     String email = "a@gmail.com";
     String pass = "12345678";
+    bool notif = true;
+
+    Widget align = Align(
+      alignment: Alignment.topLeft,
+      child: Text("AAA"),
+    );
+    void tampil() {
+      setState(() {
+        notif != true ? align : Align();
+      });
+    }
 
     return GeneralPageAwal(
       title: "Log In",
@@ -290,9 +301,9 @@ class _SignInPageState extends State<SignInPage> {
   }
 }
 
-Expanded buildDivider() {
-  return Expanded(
-      child: Divider(
-    height: 3,
-  ));
-}
+// Expanded buildDivider() {
+//   return Expanded(
+//       child: Divider(
+//     height: 3,
+//   ));
+// }
