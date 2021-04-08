@@ -188,11 +188,12 @@ class _SignInPageState extends State<SignInPage> {
                               borderRadius: BorderRadius.circular(8)),
                           padding: EdgeInsets.all(0),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Expanded(
-                                flex: 3,
+                                flex:
+                                    orientation == Orientation.portrait ? 2 : 1,
                                 child: SizedBox(
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -200,32 +201,45 @@ class _SignInPageState extends State<SignInPage> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Container(
-                                        padding: EdgeInsets.all(0),
-                                        margin: EdgeInsets.fromLTRB(8, 8, 8, 8),
-                                        // alignment: Alignment.center,
-                                        child: Image(
-                                            height: 24,
-                                            width: 24,
-                                            image: AssetImage(
-                                              "assets/gmail.png",
-                                            )),
+                                        child: Row(
+                                          children: [
+                                            Image(
+                                                height: 24,
+                                                width: 24,
+                                                image: AssetImage(
+                                                  "assets/gmail.png",
+                                                )),
+                                            Container(
+                                              margin: EdgeInsets.only(left: 12),
+                                              child: Image(
+                                                  image: AssetImage(
+                                                "assets/Vdivider.png",
+                                              )),
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                      VerticalDivider(
-                                        thickness: 1,
-                                      )
                                     ],
                                   ),
                                 ),
                               ),
                               Expanded(
-                                flex: 7,
-                                child: Text(
-                                  'Masuk Dengan Google',
-                                  style: blackFontStyle.copyWith(
-                                      color: Colors.white, fontSize: 14),
+                                flex:
+                                    orientation == Orientation.portrait ? 6 : 8,
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    'Masuk Dengan Google',
+                                    style: blackFontStyle.copyWith(
+                                        color: Colors.white, fontSize: 14),
+                                  ),
                                 ),
                               ),
-                              Expanded(flex: 2, child: Container())
+                              Expanded(
+                                  flex: orientation == Orientation.portrait
+                                      ? 2
+                                      : 1,
+                                  child: Container())
                             ],
                           ),
                         ),
