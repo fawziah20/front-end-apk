@@ -17,7 +17,6 @@ part 'main_page.dart';
 part 'general_page.dart';
 part 'sign_in_page.dart';
 part 'perusahaan_uploadcv_page.dart';
-part 'perusahaan_page.dart';
 part 'home_page.dart';
 part 'perusahaan_detail_page.dart';
 part 'illustration_page.dart';
