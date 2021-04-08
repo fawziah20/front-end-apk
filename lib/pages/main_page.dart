@@ -29,7 +29,7 @@ class _MainPageState extends State<MainPage> {
               } else if (selectedPage == 1) {
                 return Text("Bookmark");
               } else {
-                return Text("Profil");
+                return Text("");
               }
             })),
         actions: <Widget>[

@@ -12,10 +12,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: PerusahaanDetailPage(
-        userSave: UserSave(perusahaan: mockPerusahaan[3]),
-      ),
-    );
+        debugShowCheckedModeBanner: false, home: SignInPage());
   }
 }

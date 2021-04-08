@@ -2,26 +2,32 @@ part of 'models.dart';
 
 enum UserSaveStatus { save, unsave }
 
-class UserSave extends Equatable {
+class UserSave {
   final int id;
   final Perusahaan perusahaan;
-  final User user;
   final UserSaveStatus status;
 
   UserSave({
     this.id,
     this.perusahaan,
-    this.user,
     this.status,
   });
-
-  @override
-  List<Object> get props => [id, perusahaan, user, status];
 }
 
-UserSave mockUserSave = UserSave(
-  id: 1,
-  perusahaan: mockPerusahaan[1],
-  user: mockUser,
-  status: UserSaveStatus.save,
-);
+List<UserSave> mockUserSave = [
+  UserSave(
+    id: 1,
+    perusahaan: mockPerusahaan[1],
+    status: UserSaveStatus.save,
+  ),
+  UserSave(
+    id: 2,
+    perusahaan: mockPerusahaan[2],
+    status: UserSaveStatus.save,
+  ),
+  UserSave(
+    id: 1,
+    perusahaan: mockPerusahaan[4],
+    status: UserSaveStatus.save,
+  ),
+];
