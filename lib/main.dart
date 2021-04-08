@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:latihan1/models/models.dart';
 import 'pages/pages.dart';
 
 void main() {
@@ -11,6 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        debugShowCheckedModeBanner: false, home: SignInPage());
+      debugShowCheckedModeBanner: false,
+      home: PerusahaanDetailPage(
+        userSave: UserSave(perusahaan: mockPerusahaan[3]),
+      ),
+    );
   }
 }

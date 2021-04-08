@@ -97,8 +97,11 @@ class CustomSidebar extends StatelessWidget {
           alignment: Alignment.bottomLeft,
           child: GestureDetector(
             onTap: () {
-              Route route =
-                  MaterialPageRoute(builder: (context) => PerusahaanPage());
+              Route route = MaterialPageRoute(
+                builder: (context) => PerusahaanDetailPage(
+                  userSave: UserSave(perusahaan: mockPerusahaan[3]),
+                ),
+              );
               Navigator.push(context, route);
             },
             child: Container(
