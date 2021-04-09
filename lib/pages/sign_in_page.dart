@@ -10,6 +10,12 @@ class _SignInPageState extends State<SignInPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  int lengthpass = 0;
+  _onChangedHuruf(String value) {
+    setState(() {
+      lengthpass = value.length;
+    });
+  }
 
   String validatepass(value) {
     if (value.isEmpty) {
@@ -82,6 +88,7 @@ class _SignInPageState extends State<SignInPage> {
                     Container(
                       margin: EdgeInsets.only(top: 10),
                       child: TextFormField(
+                        onChanged: _onChangedHuruf,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: validatepass,
                         obscureText: _isObscure,
@@ -103,7 +110,6 @@ class _SignInPageState extends State<SignInPage> {
                               color: _isObscure ? blueColors : greyColor3,
                               onPressed: () {
                                 setState(() {
-                                  bool notif = false;
                                   _isObscure = !_isObscure;
                                 });
                               }),
@@ -130,6 +136,12 @@ class _SignInPageState extends State<SignInPage> {
                                 Get.snackbar(
                                   "Gagal",
                                   "Email atau password tidak cocok",
+                                  backgroundColor: "D9435E".toColor(),
+                                );
+                              } else if (lengthpass < 8) {
+                                Get.snackbar(
+                                  "Gagal",
+                                  "Password kurang dari 8 karakter",
                                   backgroundColor: "D9435E".toColor(),
                                 );
                               } else {
