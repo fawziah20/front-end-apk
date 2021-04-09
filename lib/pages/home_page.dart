@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
+                  
                     padding: EdgeInsets.only(right: 24),
                     child: Text(
                       "Lihat Semua",

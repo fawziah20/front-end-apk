@@ -175,12 +175,22 @@ class _SignUpPageState extends State<SignUpPage> {
                                   "Verifikasi password berbeda",
                                   backgroundColor: "D9435E".toColor(),
                                 );
-                              } else if (lengthpass < 8) {
+                              } else if (lengthpass < 8 && lengthpass != 0) {
+                                Get.to(CompleteSignUp());
                                 Get.snackbar(
                                   "Gagal",
                                   "Password harus lebih dari 8 karakter",
                                   backgroundColor: "D9435E".toColor(),
                                 );
+                              } else if (lengthpass == 0) {
+                                Get.to(CompleteSignUp());
+                                Get.snackbar(
+                                  "Gagal",
+                                  "Password tidak boleh kosong",
+                                  backgroundColor: "D9435E".toColor(),
+                                );
+                              } else {
+                                Get.to(CompleteSignUp());
                               }
                             },
                             elevation: 0,

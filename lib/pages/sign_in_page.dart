@@ -130,9 +130,10 @@ class _SignInPageState extends State<SignInPage> {
                                   emailController.text == email &&
                                   passwordController.text == pass) {
                                 print("Validate");
-                                Get.to(SignUpPage());
+                                Get.to(MainPage);
                               } else if (emailController.text != email ||
                                   passwordController.text != pass) {
+                                Get.to(MainPage());
                                 Get.snackbar(
                                   "Gagal",
                                   "Email atau password tidak cocok",
@@ -224,7 +225,9 @@ class _SignInPageState extends State<SignInPage> {
                         margin: EdgeInsets.only(top: 16),
                         child: Container(
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.to(SignUpPage());
+                            },
                             elevation: 0,
                             color: "E76257".toColor(),
                             shape: RoundedRectangleBorder(
