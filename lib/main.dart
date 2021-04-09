@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-        debugShowCheckedModeBanner: false, home: SignInPage());
+    return GetMaterialApp(debugShowCheckedModeBanner: false, home: MainPage());
   }
 }
