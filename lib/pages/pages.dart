@@ -25,3 +25,4 @@ part "general_profile_page.dart";
 part "general_pages_awal.dart";
 part "sign_up_page.dart";
 part "complete_signup.dart";
+part "coba_src.dart";
