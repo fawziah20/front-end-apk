@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:latihan1/models/models.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'pages/pages.dart';
 
@@ -12,7 +11,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(debugShowCheckedModeBanner: false, home: Splash2());
   }
 }
@@ -53,4 +51,4 @@ class Splash2 extends StatelessWidget {
       ],
     );
   }
-
+}
