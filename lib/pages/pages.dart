@@ -11,6 +11,7 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:latihan1/models/models.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:get/get.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 part 'main_page.dart';
 part 'general_page.dart';
