@@ -34,14 +34,19 @@ class _PerusahaanDetailPageState extends State<PerusahaanDetailPage> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 24, top: 24),
-                          width: 32,
-                          height: 32,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/kembali.png'),
-                              fit: BoxFit.contain,
+                        GestureDetector(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(left: 24, top: 24),
+                            width: 32,
+                            height: 32,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/kembali.png'),
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
                         ),

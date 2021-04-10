@@ -53,11 +53,11 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Row(
                       mainAxisSize: MainAxisSize.max,
-                      children: mockPerusahaan
+                      children: mockUserSave
                           .map((e) => Padding(
                                 padding: EdgeInsets.only(
-                                    left: (e == mockPerusahaan.first) ? 24 : 0),
-                                child: Rekomendasi(perusahaan: e),
+                                    left: (e == mockUserSave.first) ? 24 : 0),
+                                child: Rekomendasi(save: e),
                               ))
                           .toList(),
                     ),
@@ -73,9 +73,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Column(
-                children: mockPerusahaan
-                    .map((e) => LowonganBaru(lowongan: e))
-                    .toList(),
+                children:
+                    mockUserSave.map((e) => LowonganBaru(save: e)).toList(),
               ),
             ],
           ),

@@ -49,13 +49,16 @@ class _LamaranState extends State<Lamaran> {
                               fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Container(
-                        width: 40,
-                        height: 40,
-                        alignment: Alignment.topRight,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/close.png'))),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          alignment: Alignment.topRight,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/close.png'))),
+                        ),
                       ),
                     ],
                   ),
