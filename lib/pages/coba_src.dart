@@ -25,9 +25,15 @@ class _CobaSrcState extends State<CobaSrc> {
             alignment: Alignment.center,
             child: Builder(builder: (_) {
               if (selectedPage == 0) {
-                return Text("Beranda");
+                return Text(
+                  "Beranda",
+                  style: TextStyle(color: Colors.white),
+                );
               } else if (selectedPage == 1) {
-                return Text("Bookmark");
+                return Text(
+                  "Bookmark",
+                  style: TextStyle(color: Colors.white),
+                );
               } else {
                 return Text("");
               }
@@ -97,63 +103,33 @@ class Search extends SearchDelegate<Perusahaan> {
   ThemeData appBarTheme(BuildContext context) {
     assert(context != null);
     final ThemeData theme = Theme.of(context);
-    assert(theme != null);
-    return theme;
+    // final ColorScheme colorScheme = theme.colorScheme;
 
-    // assert(context != null);
-    // final ThemeData theme = Theme.of(context);
-    // // final ColorScheme colorScheme = theme.colorScheme;
-
-    // // assert(theme != null);
-    // return theme.copyWith(
-    //     primaryColor: "528FFF".toColor(),
-    //     hintColor: Colors.white,
-    //     inputDecorationTheme: InputDecorationTheme(
-
-    //       labelStyle: TextStyle(
-    //           fontFamily: "blackFontStyle3",
-    //           color: Colors.white,
-    //           fontSize: 14,
-    //           fontWeight: FontWeight.normal),
-    //       hintStyle: TextStyle(
-    //           fontFamily: "blackFontStyle3",
-    //           color: Colors.white,
-    //           fontSize: 14,
-    //           fontWeight: FontWeight.normal),
-    //       fillColor: Colors.white54,
-    //       filled: true,
-    //     ),
-    //     appBarTheme: AppBarTheme(
-    //       textTheme: theme.textTheme.copyWith(
-    //           headline6: TextStyle(
-    //               fontFamily: "blackFontStyle3",
-    //               color: Colors.white,
-    //               fontSize: 14,
-    //               fontWeight: FontWeight.normal)),
-    //       brightness: Brightness.dark,
-    //       backgroundColor: "528FFF".toColor(),
-    //       iconTheme: theme.primaryIconTheme.copyWith(color: Colors.white),
-    //     )
-
-    // appBarTheme: AppBarTheme(
-    //   elevation: 0,
-    //   brightness: colorScheme.brightness,
-    //   backgroundColor: colorScheme.brightness == Brightness.dark
-    //       ? Colors.grey[900]
-    //       : "528FFF".toColor(),
-    //   iconTheme: theme.primaryIconTheme.copyWith(color: Colors.white),
-    //   textTheme: theme.textTheme,
-    // ),
-    // inputDecorationTheme: searchFieldDecorationTheme ??
-    //     InputDecorationTheme(
-    //       hintStyle: TextStyle(
-    //           fontFamily: "blackFontStyle3",
-    //           color: Colors.white,
-    //           fontSize: 14,
-    //           fontWeight: FontWeight.normal),
-    //       border: InputBorder.none,
-    //     ),
-    // );
+    // assert(theme != null);
+    return theme.copyWith(
+        primaryColor: "528FFF".toColor(),
+        hintColor: Colors.white,
+        inputDecorationTheme: InputDecorationTheme(
+          labelStyle: TextStyle(
+              fontFamily: "blackFontStyle3",
+              color: Colors.white,
+              fontSize: 14,
+              fontWeight: FontWeight.normal),
+          hintStyle: TextStyle(
+              fontFamily: "blackFontStyle3",
+              color: Colors.white,
+              fontSize: 14,
+              fontWeight: FontWeight.normal),
+        ),
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          textTheme: theme.textTheme.copyWith(
+              title: theme.textTheme.title
+                  .copyWith(color: theme.primaryTextTheme.title.color)),
+          brightness: Brightness.dark,
+          backgroundColor: "528FFF".toColor(),
+          iconTheme: theme.primaryIconTheme.copyWith(color: Colors.white),
+        ));
   }
 
   List<Widget> buildActions(BuildContext context) {
