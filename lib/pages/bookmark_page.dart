@@ -8,10 +8,13 @@ class BookmarkPage extends StatefulWidget {
 class _BookmarkPageState extends State<BookmarkPage> {
   @override
   Widget build(BuildContext context) {
-    //return IllustrationPage();
-    return Container(
-        margin: EdgeInsets.only(bottom: 38),
-        child: ListView(
-            children: mockUserSave.map((e) => Save(save: e)).toList()));
+    if (mockUserSave.length == 0) {
+      return IllustrationPage();
+    } else {
+      return Container(
+          margin: EdgeInsets.only(bottom: 38),
+          child: ListView(
+              children: mockUserSave.map((e) => Save(save: e)).toList()));
+    }
   }
 }

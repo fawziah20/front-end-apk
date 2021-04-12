@@ -18,15 +18,4 @@ class SaveCubit extends Cubit<SaveState> {
       emit(SaveLoadingFailed(result.message));
     }
   }
-
-  Future<bool> saveUserSave(UserSave save) async {
-    ApiReturnValue<UserSave> result = await UserSaveServices.saveUserSave(save);
-
-    if (result.value != null) {
-      emit(SaveLoaded((state as SaveLoaded).save + [result.value]));
-      return true;
-    } else {
-      return false;
-    }
-  }
 }

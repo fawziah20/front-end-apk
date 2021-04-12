@@ -26,7 +26,7 @@ class _RekomendasiState extends State<Rekomendasi> {
           height: 132,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            color: selected != '1' ? Colors.blue : Colors.white,
+            color: selected != '1' ? "75A6FF".toColor() : Colors.white,
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.2),
