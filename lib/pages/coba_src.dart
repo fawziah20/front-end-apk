@@ -86,6 +86,7 @@ class _CobaSrcState extends State<CobaSrc> {
 
 class Search extends SearchDelegate<Perusahaan> {
   String get searchFieldLabel => "Cari disini";
+
   TextStyle get searchFieldStyle => TextStyle(
       fontFamily: "blackFontStyle3",
       color: Colors.white,
@@ -96,29 +97,63 @@ class Search extends SearchDelegate<Perusahaan> {
   ThemeData appBarTheme(BuildContext context) {
     assert(context != null);
     final ThemeData theme = Theme.of(context);
-    final ColorScheme colorScheme = theme.colorScheme;
-
     assert(theme != null);
-    return theme.copyWith(
-      appBarTheme: AppBarTheme(
-        elevation: 0,
-        brightness: colorScheme.brightness,
-        backgroundColor: colorScheme.brightness == Brightness.dark
-            ? Colors.grey[900]
-            : "528FFF".toColor(),
-        iconTheme: theme.primaryIconTheme.copyWith(color: Colors.white),
-        textTheme: theme.textTheme,
-      ),
-      inputDecorationTheme: searchFieldDecorationTheme ??
-          InputDecorationTheme(
-            hintStyle: TextStyle(
-                fontFamily: "blackFontStyle3",
-                color: Colors.white,
-                fontSize: 14,
-                fontWeight: FontWeight.normal),
-            border: InputBorder.none,
-          ),
-    );
+    return theme;
+
+    // assert(context != null);
+    // final ThemeData theme = Theme.of(context);
+    // // final ColorScheme colorScheme = theme.colorScheme;
+
+    // // assert(theme != null);
+    // return theme.copyWith(
+    //     primaryColor: "528FFF".toColor(),
+    //     hintColor: Colors.white,
+    //     inputDecorationTheme: InputDecorationTheme(
+
+    //       labelStyle: TextStyle(
+    //           fontFamily: "blackFontStyle3",
+    //           color: Colors.white,
+    //           fontSize: 14,
+    //           fontWeight: FontWeight.normal),
+    //       hintStyle: TextStyle(
+    //           fontFamily: "blackFontStyle3",
+    //           color: Colors.white,
+    //           fontSize: 14,
+    //           fontWeight: FontWeight.normal),
+    //       fillColor: Colors.white54,
+    //       filled: true,
+    //     ),
+    //     appBarTheme: AppBarTheme(
+    //       textTheme: theme.textTheme.copyWith(
+    //           headline6: TextStyle(
+    //               fontFamily: "blackFontStyle3",
+    //               color: Colors.white,
+    //               fontSize: 14,
+    //               fontWeight: FontWeight.normal)),
+    //       brightness: Brightness.dark,
+    //       backgroundColor: "528FFF".toColor(),
+    //       iconTheme: theme.primaryIconTheme.copyWith(color: Colors.white),
+    //     )
+
+    // appBarTheme: AppBarTheme(
+    //   elevation: 0,
+    //   brightness: colorScheme.brightness,
+    //   backgroundColor: colorScheme.brightness == Brightness.dark
+    //       ? Colors.grey[900]
+    //       : "528FFF".toColor(),
+    //   iconTheme: theme.primaryIconTheme.copyWith(color: Colors.white),
+    //   textTheme: theme.textTheme,
+    // ),
+    // inputDecorationTheme: searchFieldDecorationTheme ??
+    //     InputDecorationTheme(
+    //       hintStyle: TextStyle(
+    //           fontFamily: "blackFontStyle3",
+    //           color: Colors.white,
+    //           fontSize: 14,
+    //           fontWeight: FontWeight.normal),
+    //       border: InputBorder.none,
+    //     ),
+    // );
   }
 
   List<Widget> buildActions(BuildContext context) {
