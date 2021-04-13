@@ -12,6 +12,7 @@ import 'package:latihan1/models/models.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:get/get.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:snapping_sheet/snapping_sheet.dart';
 
 part 'main_page.dart';
 part 'general_page.dart';
@@ -26,3 +27,4 @@ part "general_pages_awal.dart";
 part "sign_up_page.dart";
 part "complete_signup.dart";
 part "coba_src.dart";
+part "coba_src2.dart";

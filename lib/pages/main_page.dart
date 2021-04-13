@@ -15,9 +15,14 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: CustomSidebar(),
-      ),
+      drawer: Theme(
+          data: Theme.of(context).copyWith(
+            canvasColor: Colors
+                .transparent, // set the Color of the drawer transparent; we'll paint above it with the shape
+          ),
+          child: Drawer(
+            child: CustomSidebar(),
+          )),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: "528FFF".toColor(),
