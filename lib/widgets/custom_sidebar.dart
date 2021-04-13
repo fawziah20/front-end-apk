@@ -12,22 +12,23 @@ class CustomSidebar extends StatelessWidget {
                 width: double.infinity,
                 height: 50,
                 margin: EdgeInsets.only(top: 38, left: 24),
-                child: Text("Menu",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 32,
-                    )),
+                child: Text(
+                  "Menu",
+                  style: GoogleFonts.inter().copyWith(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ),
               Container(
                 width: double.infinity,
                 height: 50,
                 margin: EdgeInsets.only(left: 24),
                 padding: EdgeInsets.symmetric(vertical: 16),
-                child: Text("Login disini",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    )),
+                child: Text(
+                  "Login disini",
+                  style: blackFontStyle3,
+                ),
               ),
               SizedBox(
                 height: 1,
@@ -41,11 +42,10 @@ class CustomSidebar extends StatelessWidget {
                 height: 50,
                 margin: EdgeInsets.only(left: 24),
                 padding: EdgeInsets.symmetric(vertical: 16),
-                child: Text("Kebijakan",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    )),
+                child: Text(
+                  "Kebijakan",
+                  style: blackFontStyle3,
+                ),
               ),
               SizedBox(
                 height: 1,
@@ -59,11 +59,10 @@ class CustomSidebar extends StatelessWidget {
                 height: 50,
                 margin: EdgeInsets.only(left: 24),
                 padding: EdgeInsets.symmetric(vertical: 16),
-                child: Text("Pengaturan",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    )),
+                child: Text(
+                  "Pengaturan",
+                  style: blackFontStyle3,
+                ),
               ),
               SizedBox(
                 height: 1,
@@ -77,11 +76,10 @@ class CustomSidebar extends StatelessWidget {
                 height: 50,
                 margin: EdgeInsets.only(left: 24),
                 padding: EdgeInsets.symmetric(vertical: 16),
-                child: Text("Update Aplikasi",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    )),
+                child: Text(
+                  "Update Aplikasi",
+                  style: blackFontStyle3,
+                ),
               ),
               SizedBox(
                 height: 1,

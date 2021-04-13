@@ -9,8 +9,10 @@ Color greyColor3 = "A5B2C2".toColor();
 
 TextStyle greyFontStyle = GoogleFonts.inter().copyWith(color: greyColor);
 TextStyle blackFontStyle = GoogleFonts.inter()
-    .copyWith(color: Colors.black, fontSize: 22, fontWeight: FontWeight.w500);
+    .copyWith(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700);
 TextStyle blackFontStyle2 = GoogleFonts.inter()
-    .copyWith(color: Colors.black, fontSize: 26, fontWeight: FontWeight.w500);
+    .copyWith(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500);
 TextStyle blackFontStyle3 = GoogleFonts.inter()
-    .copyWith(color: Colors.black, fontWeight: FontWeight.w500);
+    .copyWith(color: Colors.black, fontWeight: FontWeight.w700);
+TextStyle blackFontStyle4 = GoogleFonts.inter()
+    .copyWith(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w600);

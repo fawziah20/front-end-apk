@@ -49,9 +49,8 @@ class _RekomendasiState extends State<Rekomendasi> {
                     margin: EdgeInsets.only(top: 12, left: 12),
                     child: Text(
                       widget.save.perusahaan.posisi,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                      style: GoogleFonts.inter().copyWith(
+                        fontWeight: FontWeight.w700,
                         color: selected != '1' ? Colors.white : Colors.black,
                       ),
                     ),
@@ -75,8 +74,9 @@ class _RekomendasiState extends State<Rekomendasi> {
                 padding: EdgeInsets.only(top: 5, left: 12),
                 child: Text(
                   "IDR 2.000.000",
-                  style: TextStyle(
+                  style: GoogleFonts.inter().copyWith(
                     fontSize: 12,
+                    fontWeight: FontWeight.w500,
                     color: selected != '1' ? Colors.white : Colors.black,
                   ),
                 ),
@@ -104,16 +104,18 @@ class _RekomendasiState extends State<Rekomendasi> {
                         children: [
                           Text(
                             widget.save.perusahaan.nama,
-                            style: TextStyle(
+                            style: GoogleFonts.inter().copyWith(
                               fontSize: 10,
+                              fontWeight: FontWeight.w600,
                               color:
                                   selected != '1' ? Colors.white : Colors.black,
                             ),
                           ),
                           Text(
                             widget.save.perusahaan.alamat,
-                            style: TextStyle(
+                            style: GoogleFonts.inter().copyWith(
                               fontSize: 8,
+                              fontWeight: FontWeight.w400,
                               color:
                                   selected != '1' ? Colors.white : Colors.black,
                             ),
@@ -127,8 +129,9 @@ class _RekomendasiState extends State<Rekomendasi> {
                         alignment: Alignment.bottomRight,
                         child: Text(
                           widget.save.perusahaan.deadline,
-                          style: TextStyle(
+                          style: GoogleFonts.inter().copyWith(
                             fontSize: 8,
+                            fontWeight: FontWeight.w400,
                             color:
                                 selected != '1' ? Colors.white : Colors.black,
                           ),

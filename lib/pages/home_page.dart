@@ -27,8 +27,7 @@ class _HomePageState extends State<HomePage> {
                     margin: EdgeInsets.only(top: 32, left: 24),
                     child: Text(
                       "Untuk Kamu",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: blackFontStyle4,
                     ),
                   ),
                   Container(
@@ -68,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                 margin: EdgeInsets.only(top: 24, left: 24),
                 child: Text(
                   "Lowongan Terbaru",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: blackFontStyle4,
                 ),
               ),
               Column(

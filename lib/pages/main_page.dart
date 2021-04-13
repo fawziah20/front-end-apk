@@ -25,16 +25,22 @@ class _MainPageState extends State<MainPage> {
             alignment: Alignment.center,
             child: Builder(builder: (_) {
               if (selectedPage == 0) {
-                return Text("Beranda");
+                return Text(
+                  "Beranda",
+                  style: blackFontStyle,
+                );
               } else if (selectedPage == 1) {
-                return Text("Bookmark");
+                return Text(
+                  "Bookmark",
+                  style: blackFontStyle,
+                );
               } else {
                 return Text("");
               }
             })),
         actions: <Widget>[
           Padding(
-              padding: EdgeInsets.only(right: 20.0),
+              padding: EdgeInsets.only(right: 30.0),
               child: GestureDetector(
                 onTap: () {},
                 child: Icon(
