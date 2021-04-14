@@ -5,13 +5,14 @@ class CustomSidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black38,
-                offset: new Offset(20.0, 10.0),
-                blurRadius: 50.0,
-                spreadRadius: 90.0)
-          ],
+          // boxShadow: [
+          //   BoxShadow(
+          //       color: Colors.black38,
+          //       offset: new Offset(20.0, 10.0),
+          //       blurRadius: 50.0,
+          //       spreadRadius: 90.0)
+          // ],
+
           color: Colors.white,
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(32), bottomRight: Radius.circular(32))),

@@ -6,13 +6,15 @@ class GenProfilePage extends StatelessWidget {
   final String str;
   final String photo;
   final String photodefault;
+  final bool tampil;
 
   GenProfilePage(
       {this.title = "title",
       this.child,
       this.str,
       this.photo,
-      this.photodefault = "assets/person.png"});
+      this.photodefault = "assets/person.png",
+      this.tampil});
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +101,13 @@ class GenProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
+              Positioned(
+                  top: orientation == Orientation.portrait
+                      ? MediaQuery.of(context).size.height * 0.05
+                      : 20,
+                  left: 20,
+                  child: new IconButton(
+                      icon: Icon(Icons.arrow_back), onPressed: () {})),
             ],
           ),
           child ?? Container(),

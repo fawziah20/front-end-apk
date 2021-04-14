@@ -23,36 +23,40 @@ class _MainPageState extends State<MainPage> {
           child: Drawer(
             child: CustomSidebar(),
           )),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: "528FFF".toColor(),
-        title: Container(
-            alignment: Alignment.center,
-            child: Builder(builder: (_) {
-              if (selectedPage == 0) {
-                return Text("Beranda");
-              } else if (selectedPage == 1) {
-                return Text("Bookmark");
-              } else {
-                return Text("");
-              }
-            })),
-        actions: <Widget>[
-          Padding(
-              padding: EdgeInsets.only(right: 20.0),
-              child: GestureDetector(
-                onTap: () {},
-                child: Icon(
-                  Icons.search,
-                  size: 26.0,
-                ),
-              )),
-        ],
-      ),
+      appBar: selectedPage != 2
+          ? AppBar(
+              elevation: 0,
+              backgroundColor: "528FFF".toColor(),
+              title: Container(
+                  alignment: Alignment.center,
+                  child: Builder(builder: (_) {
+                    if (selectedPage == 0) {
+                      return Text("Beranda");
+                    } else if (selectedPage == 1) {
+                      return Text("Bookmark");
+                    } else {
+                      return Text("");
+                    }
+                  })),
+              actions: <Widget>[
+                Padding(
+                    padding: EdgeInsets.only(right: 20.0),
+                    child: selectedPage != 2
+                        ? GestureDetector(
+                            onTap: () {},
+                            child: Icon(
+                              Icons.search,
+                              size: 26.0,
+                            ),
+                          )
+                        : SizedBox()),
+              ],
+            )
+          : null,
       body: Stack(
         children: [
           Container(
-            color: Colors.black,
+            color: blueColors,
           ),
           SafeArea(
               child: Container(
@@ -69,7 +73,7 @@ class _MainPageState extends State<MainPage> {
             children: [
               HomePage(),
               BookmarkPage(),
-              ProfilePage(),
+              Genc(),
             ],
           )),
           Align(
