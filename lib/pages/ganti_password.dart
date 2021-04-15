@@ -27,7 +27,7 @@ class _GantiPasswordState extends State<GantiPassword> {
       ),
       body: Container(
         margin: EdgeInsets.all(24),
-        child: Column(
+        child: ListView(
           children: [
             Text(
               "Masukkan email yang tertaut dengan akun kamu dan kami akan kirimkan email dengan interuksi untuk mengganti password.",
