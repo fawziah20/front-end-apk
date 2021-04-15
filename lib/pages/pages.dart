@@ -27,3 +27,4 @@ part "general_pages_awal.dart";
 part "sign_up_page.dart";
 part "complete_signup.dart";
 part 'sliver_page.dart';
+part 'cari.dart';
