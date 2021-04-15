@@ -11,7 +11,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(debugShowCheckedModeBanner: false, home: MainPage());
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MainPage(),
+      theme: ThemeData(
+          textTheme: TextTheme(
+              title: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 14))),
+    );
   }
 }
 
@@ -44,10 +53,6 @@ class Splash2 extends StatelessWidget {
             ),
           ),
         ),
-        // Container(
-        //   height: MediaQuery.of(context).size.height * 0.1,
-        //   color: Colors.white,
-        // )
       ],
     );
   }
