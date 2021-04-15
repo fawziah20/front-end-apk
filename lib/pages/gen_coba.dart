@@ -32,6 +32,101 @@ class _GencState extends State<Genc> {
     });
   }
 
+  void _onButtonPressed() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Row(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 24, left: 24),
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [blueColors2, blueColors],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight),
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: IconButton(
+                      color: blueColors2,
+                      alignment: Alignment.bottomRight,
+                      icon: Icon(Icons.delete_outline_rounded,
+                          color: Colors.white),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    child: Text("Hapus Foto"),
+                    margin: EdgeInsets.only(top: 10, left: 24),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 24, left: 24),
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [blueColors2, blueColors],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight),
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: IconButton(
+                      color: blueColors2,
+                      alignment: Alignment.bottomRight,
+                      icon: Icon(Icons.delete_outline_rounded,
+                          color: Colors.white),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    child: Text(" Galeri"),
+                    margin: EdgeInsets.only(top: 10, left: 24),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 24, left: 24),
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [blueColors2, blueColors],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight),
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: IconButton(
+                      color: blueColors2,
+                      alignment: Alignment.bottomRight,
+                      icon:
+                          Icon(Icons.camera_alt_outlined, color: Colors.white),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    child: Text("Kamera"),
+                    margin: EdgeInsets.only(top: 10, left: 24),
+                  )
+                ],
+              ),
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
@@ -69,60 +164,79 @@ class _GencState extends State<Genc> {
                           color: Colors.white, fontWeight: FontWeight.bold),
                     )),
                 Positioned(
-                  bottom: -40,
-                  child: Material(
-                    elevation: 15,
-                    borderRadius: BorderRadius.circular(8),
-                    child: Stack(
-                      overflow: Overflow.visible,
-                      children: [
-                        Container(
-                          width:
-                              orientation == Orientation.portrait ? 150 : 100,
-                          height:
-                              orientation == Orientation.portrait ? 150 : 100,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8),
-                            shape: BoxShape.rectangle,
-                          ),
-                          child: Container(
-                            width:
-                                orientation == Orientation.portrait ? 150 : 100,
-                            height:
-                                orientation == Orientation.portrait ? 150 : 100,
-                            decoration: BoxDecoration(
+                  bottom: -20,
+                  child: Stack(
+                    overflow: Overflow.visible,
+                    children: [
+                      Material(
+                        elevation: 15,
+                        borderRadius: BorderRadius.circular(8),
+                        child: Stack(
+                          overflow: Overflow.visible,
+                          children: [
+                            Container(
+                              width: orientation == Orientation.portrait
+                                  ? 150
+                                  : 100,
+                              height: orientation == Orientation.portrait
+                                  ? 150
+                                  : 100,
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(8),
                                 shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(4),
-                                image: DecorationImage(
-                                  image: AssetImage("assets/jonas.png"),
-                                  // fit: BoxFit.contain
-                                )),
-                          ),
+                              ),
+                              child: Container(
+                                width: orientation == Orientation.portrait
+                                    ? 150
+                                    : 100,
+                                height: orientation == Orientation.portrait
+                                    ? 150
+                                    : 100,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.rectangle,
+                                    borderRadius: BorderRadius.circular(4),
+                                    image: DecorationImage(
+                                      image: AssetImage("assets/jonas.png"),
+                                      // fit: BoxFit.contain
+                                    )),
+                              ),
+                            ),
+                          ],
                         ),
-                        Positioned(
-                          bottom: -5,
-                          right: -5,
+                      ),
+                      Positioned(
+                        bottom: -5,
+                        right: -5,
+                        child: GestureDetector(
+                          onTap: () => _onButtonPressed(),
                           child: Container(
-                            height: 40,
-                            width: 40,
+                            height: 50,
+                            width: 50,
                             decoration: BoxDecoration(
-                              color: "0E3854".toColor(),
+                              gradient: LinearGradient(
+                                  colors: [blueColors2, blueColors],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight),
                               shape: BoxShape.rectangle,
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: IconButton(
-                              color: blueColors2,
-                              alignment: Alignment.bottomRight,
-                              icon: Icon(Icons.camera_alt_rounded,
-                                  color: Colors.white),
-                              onPressed: () {},
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: IconButton(
+                                iconSize: 30,
+                                color: blueColors2,
+                                alignment: Alignment.bottomRight,
+                                icon: Icon(Icons.camera_alt_rounded,
+                                    color: Colors.white),
+                                onPressed: () => _onButtonPressed(),
+                              ),
                             ),
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Positioned(
@@ -211,7 +325,7 @@ class _GencState extends State<Genc> {
                                           fontSize: 14),
                                     )),
                                 TextButton.icon(
-                                    onPressed: () {},
+                                    onPressed: () => _onButtonPressed(),
                                     icon: CircleAvatar(
                                       backgroundColor: Colors.red,
                                       radius: 18,
