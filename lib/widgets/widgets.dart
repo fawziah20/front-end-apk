@@ -5,6 +5,8 @@ import 'package:latihan1/widgets/lamaran.dart';
 import 'package:supercharged/supercharged.dart';
 import 'package:latihan1/models/models.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:latihan1/shared/shared.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 part 'custom_bottom_lamaran.dart';
 part 'custom_bottom_navbar.dart';

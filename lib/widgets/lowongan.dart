@@ -23,7 +23,7 @@ class _LowonganBaruState extends State<LowonganBaru> {
         margin: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: selected != '1' ? Colors.blue : Colors.white,
+          color: selected != '1' ? "75A6FF".toColor() : Colors.white,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.3),
@@ -68,8 +68,9 @@ class _LowonganBaruState extends State<LowonganBaru> {
                               margin: EdgeInsets.only(top: 6),
                               child: Text(
                                 widget.save.perusahaan.nama,
-                                style: TextStyle(
+                                style: GoogleFonts.inter().copyWith(
                                   fontSize: 10,
+                                  fontWeight: FontWeight.w400,
                                   color: selected != '1'
                                       ? Colors.white
                                       : Colors.black,
@@ -81,9 +82,8 @@ class _LowonganBaruState extends State<LowonganBaru> {
                               margin: EdgeInsets.only(bottom: 2),
                               child: Text(
                                 widget.save.perusahaan.posisi,
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
+                                style: GoogleFonts.inter().copyWith(
+                                  fontWeight: FontWeight.w700,
                                   color: selected != '1'
                                       ? Colors.white
                                       : Colors.black,
@@ -122,16 +122,18 @@ class _LowonganBaruState extends State<LowonganBaru> {
                         children: [
                           Text(
                             'IDR 2.000.000',
-                            style: TextStyle(
+                            style: GoogleFonts.inter().copyWith(
                               fontSize: 12,
+                              fontWeight: FontWeight.w500,
                               color:
                                   selected != '1' ? Colors.white : Colors.black,
                             ),
                           ),
                           Text(
                             widget.save.perusahaan.alamat,
-                            style: TextStyle(
+                            style: GoogleFonts.inter().copyWith(
                               fontSize: 10,
+                              fontWeight: FontWeight.w400,
                               color:
                                   selected != '1' ? Colors.white : Colors.black,
                             ),
@@ -158,8 +160,9 @@ class _LowonganBaruState extends State<LowonganBaru> {
                                 ),
                                 child: Text(
                                   widget.save.perusahaan.pendidikan,
-                                  style: TextStyle(
-                                    fontSize: 10,
+                                  style: GoogleFonts.inter().copyWith(
+                                    fontSize: 8,
+                                    fontWeight: FontWeight.w500,
                                     color: selected != '1'
                                         ? Colors.white
                                         : Colors.black,
@@ -180,8 +183,9 @@ class _LowonganBaruState extends State<LowonganBaru> {
                                 ),
                                 child: Text(
                                   widget.save.perusahaan.jamkerja,
-                                  style: TextStyle(
-                                    fontSize: 10,
+                                  style: GoogleFonts.inter().copyWith(
+                                    fontSize: 8,
+                                    fontWeight: FontWeight.w500,
                                     color: selected != '1'
                                         ? Colors.white
                                         : Colors.black,
@@ -197,8 +201,9 @@ class _LowonganBaruState extends State<LowonganBaru> {
                             alignment: Alignment.bottomRight,
                             child: Text(
                               widget.save.perusahaan.deadline,
-                              style: TextStyle(
+                              style: GoogleFonts.inter().copyWith(
                                 fontSize: 10,
+                                fontWeight: FontWeight.w300,
                                 color: selected != '1'
                                     ? Colors.white
                                     : Colors.black,

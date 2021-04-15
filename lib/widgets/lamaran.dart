@@ -83,6 +83,7 @@ class _LamaranState extends State<Lamaran> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
+                            margin: EdgeInsets.only(right: 10),
                             padding: EdgeInsets.fromLTRB(15, 10, 130, 10),
                             decoration: BoxDecoration(
                                 border:

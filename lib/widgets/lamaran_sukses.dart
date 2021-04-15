@@ -11,103 +11,105 @@ class _LamaranSuksesState extends State<LamaranSukses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          ////Body
-          Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                ////Body Atas
-                Container(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            alignment: Alignment.center,
-                            width: 120,
-                            height: 120,
-                            margin: EdgeInsets.only(bottom: 20),
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/berhasil_lamaran.png'),
-                                  fit: BoxFit.contain),
+      body: SafeArea(
+        child: Stack(
+          children: [
+            ////Body
+            Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  ////Body Atas
+                  Container(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              alignment: Alignment.center,
+                              width: 120,
+                              height: 120,
+                              margin: EdgeInsets.only(bottom: 20),
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/berhasil_lamaran.png'),
+                                    fit: BoxFit.contain),
+                              ),
                             ),
-                          ),
-                          Text(
-                            "Kamu Berhasil Melamar",
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          Text("Semoga Kamu Lolos Ke Tahap Selanjutnya")
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ]),
-          ////Bottom
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16)),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.3),
-                    blurRadius: 5,
-                    offset: Offset(
-                      2,
-                      2,
+                            Text(
+                              "Kamu Berhasil Melamar",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                            Text("Semoga Kamu Lolos Ke Tahap Selanjutnya")
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Route route =
-                          MaterialPageRoute(builder: (context) => MainPage());
-                      Navigator.push(context, route);
-                    },
-                    child: Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 105),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: "75A6FF".toColor(),
+                ]),
+            ////Bottom
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 60,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16)),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 5,
+                      offset: Offset(
+                        2,
+                        2,
                       ),
-                      child: Text(
-                        "Kembali Ke Beranda",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 1,
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Route route =
+                            MaterialPageRoute(builder: (context) => MainPage());
+                        Navigator.push(context, route);
+                      },
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 105),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: "75A6FF".toColor(),
+                        ),
+                        child: Text(
+                          "Kembali Ke Beranda",
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
