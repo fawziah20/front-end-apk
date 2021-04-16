@@ -19,3 +19,4 @@ part 'custom_tabbar.dart';
 part 'perusahaan_list.dart';
 part 'save.dart';
 part "ganti_foto_profile.dart";
+part "alert_logout.dart";
