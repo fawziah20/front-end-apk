@@ -16,3 +16,4 @@ part 'custom_sidebar.dart';
 part 'custom_tabbar.dart';
 part 'perusahaan_list.dart';
 part 'save.dart';
+part "ganti_foto_profile.dart";
