@@ -11,9 +11,9 @@ class _AlertLogoutState extends State<AlertLogout> {
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
       child: AlertDialog(
-        backgroundColor: Colors.white70,
+        backgroundColor: Colors.white54,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8))),
+            borderRadius: BorderRadius.all(Radius.circular(16))),
         title: Center(
           child: Text(
             "Yakin Pingin keluar ?",

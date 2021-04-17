@@ -5,14 +5,6 @@ class CustomSidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          // boxShadow: [
-          //   BoxShadow(
-          //       color: Colors.black38,
-          //       offset: new Offset(20.0, 10.0),
-          //       blurRadius: 50.0,
-          //       spreadRadius: 90.0)
-          // ],
-
           color: Colors.white,
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(32), bottomRight: Radius.circular(32))),
@@ -20,6 +12,7 @@ class CustomSidebar extends StatelessWidget {
         children: [
           SafeArea(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: double.infinity,
@@ -49,17 +42,21 @@ class CustomSidebar extends StatelessWidget {
                     color: "C4C4C4".toColor(),
                   ),
                 ),
-                Container(
-                  width: double.infinity,
-                  height: 50,
-                  margin: EdgeInsets.only(left: 24),
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  child: Text("Kebijakan",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      )),
-
+                GestureDetector(
+                  onTap: () {
+                    Get.to(Kebijakan());
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    margin: EdgeInsets.only(left: 24),
+                    padding: EdgeInsets.symmetric(vertical: 16),
+                    child: Text("Kebijakan",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        )),
+                  ),
                 ),
                 SizedBox(
                   height: 1,

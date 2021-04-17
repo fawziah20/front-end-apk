@@ -15,14 +15,16 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       drawer: Theme(
           data: Theme.of(context).copyWith(
             canvasColor: Colors
                 .transparent, // set the Color of the drawer transparent; we'll paint above it with the shape
           ),
-          child: Drawer(
-            child: CustomSidebar(),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: Drawer(
+              child: CustomSidebar(),
+            ),
           )),
       appBar: selectedPage != 2
           ? AppBar(
@@ -54,7 +56,6 @@ class _MainPageState extends State<MainPage> {
               ],
             )
           : null,
-
       body: Stack(
         children: [
           Container(
@@ -75,7 +76,7 @@ class _MainPageState extends State<MainPage> {
             children: [
               HomePage(),
               BookmarkPage(),
-              Genc(),
+              ProfilePage(),
             ],
           )),
           Align(

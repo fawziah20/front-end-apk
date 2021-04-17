@@ -9,6 +9,7 @@ import 'package:latihan1/models/models.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:latihan1/shared/shared.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 
 part 'custom_bottom_lamaran.dart';
 part 'custom_bottom_navbar.dart';
