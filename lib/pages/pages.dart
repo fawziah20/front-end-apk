@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +28,7 @@ part "general_profile_page.dart";
 part "general_pages_awal.dart";
 part "sign_up_page.dart";
 part "complete_signup.dart";
-part "gen_coba.dart";
 part "ganti_password.dart";
 part 'sliver_page.dart';
 part 'cari.dart';
-
+part "kebijakan.dart";

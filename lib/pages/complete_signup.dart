@@ -9,8 +9,10 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
   TextEditingController namaController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController skillController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
     bool isLoading = false;
     return GenProfilePage(
       title: "Lengkapi Profil Kamu",
@@ -18,11 +20,13 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
       child: Column(
         children: [
           Container(
-            height: 450,
+            height: orientation == Orientation.portrait
+                ? MediaQuery.of(context).size.height * 0.52
+                : 400,
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 60),
+                  margin: EdgeInsets.only(top: 30),
                   height: 20,
                   width: 120,
                   decoration: BoxDecoration(
@@ -91,14 +95,14 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
                       icon: CircleAvatar(
                         backgroundColor: blueColors,
                         radius: 15,
-
-                        child: Icon(
-                          Icons.work,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        // child:Icons.alternate_email_rounded,
-                        // color: Colors.blue,
+                        child: Container(
+                            height: 19,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  fit: BoxFit.scaleDown,
+                                  image: AssetImage("assets/skill.png")),
+                            )),
                       ),
                       hintStyle: greyFontStyle.copyWith(
                           color: greyColor3, fontSize: 14),
