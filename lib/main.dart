@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           textTheme: TextTheme(
               title: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.normal,
                   fontSize: 14))),
     );

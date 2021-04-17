@@ -17,6 +17,7 @@ class _SignInPageState extends State<SignInPage> {
     });
   }
 
+  bool notif = false;
   String validatepass(value) {
     if (value.isEmpty) {
       return "Tidak boleh kosong";
@@ -33,7 +34,6 @@ class _SignInPageState extends State<SignInPage> {
     bool isLoading = false;
     String email = "a@gmail.com";
     String pass = "12345678";
-
     return GeneralPageAwal(
       title: "Log In",
       teks1: "Belum Memiliki Akun ?",
@@ -60,9 +60,28 @@ class _SignInPageState extends State<SignInPage> {
               Container(
                 child: Column(
                   children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Visibility(
+                        visible: notif,
+                        child: Text(
+                          "Email atau password tidak cocok",
+                          style: blackFontStyle.copyWith(
+                              fontSize: 10,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.red),
+                        ),
+                      ),
+                    ),
                     Container(
                       width: double.infinity,
                       child: TextFormField(
+                        style: notif == false
+                            ? blackFontStyle3.copyWith(
+                                fontWeight: FontWeight.normal)
+                            : blackFontStyle3.copyWith(
+                                fontWeight: FontWeight.normal,
+                                color: Colors.red),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         controller: emailController,
                         validator: MultiValidator([
@@ -70,6 +89,11 @@ class _SignInPageState extends State<SignInPage> {
                           EmailValidator(errorText: "Bukan merupakan email"),
                         ]),
                         decoration: InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: notif == true
+                                      ? Colors.red
+                                      : "B9C5D4".toColor())),
                           icon: CircleAvatar(
                             backgroundColor: blueColors,
                             radius: 15,
@@ -80,7 +104,8 @@ class _SignInPageState extends State<SignInPage> {
                             ),
                           ),
                           hintStyle: greyFontStyle.copyWith(
-                              color: greyColor3, fontSize: 14),
+                              color: notif == false ? greyColor3 : Colors.red,
+                              fontSize: 14),
                           hintText: "emailkamu@gmail.com",
                         ),
                       ),
@@ -88,12 +113,23 @@ class _SignInPageState extends State<SignInPage> {
                     Container(
                       margin: EdgeInsets.only(top: 10),
                       child: TextFormField(
+                        style: notif == false
+                            ? blackFontStyle3.copyWith(
+                                fontWeight: FontWeight.normal)
+                            : blackFontStyle3.copyWith(
+                                fontWeight: FontWeight.normal,
+                                color: Colors.red),
                         onChanged: _onChangedHuruf,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: validatepass,
                         obscureText: _isObscure,
                         controller: passwordController,
                         decoration: InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: notif == true
+                                      ? Colors.red
+                                      : "B9C5D4".toColor())),
                           icon: CircleAvatar(
                             backgroundColor: blueColors,
                             radius: 15,
@@ -114,7 +150,8 @@ class _SignInPageState extends State<SignInPage> {
                                 });
                               }),
                           hintStyle: greyFontStyle.copyWith(
-                              color: greyColor3, fontSize: 14),
+                              color: notif == false ? greyColor3 : Colors.red,
+                              fontSize: 14),
                           hintText: "password kamu",
                         ),
                       ),
@@ -133,12 +170,15 @@ class _SignInPageState extends State<SignInPage> {
                                 Get.to(MainPage);
                               } else if (emailController.text != email ||
                                   passwordController.text != pass) {
+                                setState(() {
+                                  notif = !notif;
+                                });
                                 Get.to(MainPage());
-                                Get.snackbar(
-                                  "Gagal",
-                                  "Email atau password tidak cocok",
-                                  backgroundColor: "D9435E".toColor(),
-                                );
+                                // Get.snackbar(
+                                //   "Gagal",
+                                //   "Email atau password tidak cocok",
+                                //   backgroundColor: "D9435E".toColor(),
+                                // );
                               } else if (lengthpass < 8) {
                                 Get.snackbar(
                                   "Gagal",

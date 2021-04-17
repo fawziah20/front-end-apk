@@ -44,7 +44,9 @@ class GeneralPageAwal extends StatelessWidget {
                         Text(
                           title,
                           style: blackFontStyle.copyWith(
-                              fontSize: 22, fontWeight: FontWeight.bold),
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
                           textAlign: TextAlign.center,
                         ),
                         SizedBox(
