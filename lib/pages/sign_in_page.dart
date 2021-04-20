@@ -39,8 +39,9 @@ class _SignInPageState extends State<SignInPage> {
       teks1: "Belum Memiliki Akun ?",
       teks2: "Daftar Sekarang",
       child: Container(
+        color: Colors.green,
         height: orientation == Orientation.portrait
-            ? MediaQuery.of(context).size.height * 0.80
+            ? MediaQuery.of(context).size.height * 0.83
             : 470,
         child: Form(
           key: formkey,
@@ -74,6 +75,9 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                     Container(
+                      height: orientation == Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.08
+                          : MediaQuery.of(context).size.height * 0.17,
                       width: double.infinity,
                       child: TextFormField(
                         style: notif == false
@@ -111,6 +115,9 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                     Container(
+                      height: orientation == Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.08
+                          : MediaQuery.of(context).size.height * 0.2,
                       margin: EdgeInsets.only(top: 10),
                       child: TextFormField(
                         style: notif == false

@@ -18,6 +18,7 @@ class GeneralPageAwal extends StatelessWidget {
       this.teks2});
   @override
   Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
     return Scaffold(
         appBar: AppBar(
           elevation: 0,
@@ -29,7 +30,8 @@ class GeneralPageAwal extends StatelessWidget {
             SafeArea(
               child: ListView(
                 // shrinkWrap: true,
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.only(
+                    top: 24, bottom: 0, left: 24, right: 24),
                 children: [
                   Column(
                     children: [
@@ -70,8 +72,12 @@ class GeneralPageAwal extends StatelessWidget {
                     ],
                   ),
                   Container(
-                          height: MediaQuery.of(context).size.height * 0.119,
+                          color: Colors.red,
+                          height: orientation == Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.05
+                              : MediaQuery.of(context).size.height * 0.09,
                           alignment: Alignment.bottomCenter,
+                          margin: EdgeInsets.only(bottom: 0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
