@@ -52,7 +52,7 @@ class _SignUpPageState extends State<SignUpPage> {
       teks2: "Register",
       child: Container(
         height: orientation == Orientation.portrait
-            ? MediaQuery.of(context).size.height * 0.70
+            ? MediaQuery.of(context).size.height * 0.76
             : 470,
         child: Column(
           children: [
@@ -73,6 +73,9 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: Column(
                   children: [
                     Container(
+                      height: orientation == Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.08
+                          : MediaQuery.of(context).size.height * 0.17,
                       width: double.infinity,
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -95,6 +98,9 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     Container(
+                      height: orientation == Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.08
+                          : MediaQuery.of(context).size.height * 0.17,
                       margin: EdgeInsets.only(top: 10),
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -128,6 +134,9 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     Container(
+                      height: orientation == Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.08
+                          : MediaQuery.of(context).size.height * 0.17,
                       margin: EdgeInsets.only(top: 10),
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,

@@ -20,6 +20,11 @@ class GenProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: blueColors2,
+        toolbarHeight: 1,
+        elevation: 0,
+      ),
       body: ListView(
         children: [
           Container(
@@ -36,7 +41,11 @@ class GenProfilePage extends StatelessWidget {
                     child: Container(
                       height: MediaQuery.of(context).size.height * 0.35,
                       width: double.infinity,
-                      color: blueColors,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [blueColors, blueColors2],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter)),
                     ),
                   ),
                 ),
