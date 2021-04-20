@@ -40,7 +40,7 @@ class _SignInPageState extends State<SignInPage> {
       teks2: "Daftar Sekarang",
       child: Container(
         height: orientation == Orientation.portrait
-            ? MediaQuery.of(context).size.height * 0.70
+            ? MediaQuery.of(context).size.height * 0.80
             : 470,
         child: Form(
           key: formkey,
