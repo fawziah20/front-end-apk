@@ -106,12 +106,10 @@ class _ProfilePageState extends State<ProfilePage> {
                             overflow: Overflow.visible,
                             children: [
                               Container(
-                                width: orientation == Orientation.portrait
-                                    ? 150
-                                    : 100,
-                                height: orientation == Orientation.portrait
-                                    ? 150
-                                    : 100,
+                                width:
+                                    MediaQuery.of(context).size.height * 0.23,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.23,
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -119,12 +117,10 @@ class _ProfilePageState extends State<ProfilePage> {
                                   shape: BoxShape.rectangle,
                                 ),
                                 child: Container(
-                                  width: orientation == Orientation.portrait
-                                      ? 150
-                                      : 100,
-                                  height: orientation == Orientation.portrait
-                                      ? 150
-                                      : 100,
+                                  width:
+                                      MediaQuery.of(context).size.height * 0.23,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.23,
                                   decoration: BoxDecoration(
                                       shape: BoxShape.rectangle,
                                       borderRadius: BorderRadius.circular(4),

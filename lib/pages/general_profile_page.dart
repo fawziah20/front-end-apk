@@ -19,6 +19,8 @@ class GenProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
+    double deviceHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: blueColors2,
@@ -51,7 +53,7 @@ class GenProfilePage extends StatelessWidget {
                 ),
                 Positioned(
                     top: orientation == Orientation.portrait
-                        ? MediaQuery.of(context).size.height * 0.086
+                        ? MediaQuery.of(context).size.height * 0.03
                         : 20,
                     child: Text(
                       title,
@@ -69,12 +71,8 @@ class GenProfilePage extends StatelessWidget {
                           overflow: Overflow.visible,
                           children: [
                             Container(
-                              width: orientation == Orientation.portrait
-                                  ? 150
-                                  : 100,
-                              height: orientation == Orientation.portrait
-                                  ? 150
-                                  : 100,
+                              width: MediaQuery.of(context).size.height * 0.23,
+                              height: MediaQuery.of(context).size.height * 0.23,
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -82,12 +80,10 @@ class GenProfilePage extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Container(
-                                width: orientation == Orientation.portrait
-                                    ? 150
-                                    : 100,
-                                height: orientation == Orientation.portrait
-                                    ? 150
-                                    : 100,
+                                width:
+                                    MediaQuery.of(context).size.height * 0.23,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.23,
                                 decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.circular(4),
@@ -103,15 +99,19 @@ class GenProfilePage extends StatelessWidget {
                                     bottom: -5,
                                     right: -5,
                                     child: Container(
-                                      height: 40,
-                                      width: 40,
+                                      height: 50,
+                                      width: 50,
                                       decoration: BoxDecoration(
-                                        color: "0E3854".toColor(),
+                                        gradient: LinearGradient(
+                                            colors: [blueColors2, blueColors],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight),
                                         shape: BoxShape.rectangle,
                                         borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: IconButton(
                                         color: blueColors2,
+                                        iconSize: 30,
                                         alignment: Alignment.bottomRight,
                                         icon: Icon(Icons.camera_alt_rounded,
                                             color: Colors.white),

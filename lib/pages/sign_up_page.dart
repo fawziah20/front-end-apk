@@ -44,6 +44,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
+    double deviceHeight = MediaQuery.of(context).size.height;
     bool isLoading = false;
     var color2 = "828282".toColor();
     return GeneralPageAwal(
@@ -64,7 +65,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 style: blackFontStyle.copyWith(
                     fontWeight: FontWeight.bold,
                     color: blueColors,
-                    fontSize: 20),
+                    fontSize: deviceHeight <= 768 ? 18 : 20),
               ),
             ),
             Container(
@@ -73,14 +74,14 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: Column(
                   children: [
                     Container(
-                      height: orientation == Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.08
-                          : MediaQuery.of(context).size.height * 0.17,
+                      height: deviceHeight <= 768 ? 40 : 50,
                       width: double.infinity,
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: MultiValidator([
-                          RequiredValidator(errorText: "Tidak boleh kosong"),
+                          RequiredValidator(
+                            errorText: "Tidak boleh kosong",
+                          ),
                           EmailValidator(errorText: "Bukan merupakan email"),
                         ]),
                         controller: email,
@@ -98,9 +99,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     Container(
-                      height: orientation == Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.08
-                          : MediaQuery.of(context).size.height * 0.17,
+                      height: deviceHeight <= 768 ? 40 : 50,
                       margin: EdgeInsets.only(top: 10),
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -134,9 +133,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     Container(
-                      height: orientation == Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.08
-                          : MediaQuery.of(context).size.height * 0.17,
+                      height: deviceHeight <= 768 ? 40 : 50,
                       margin: EdgeInsets.only(top: 10),
                       child: TextFormField(
                         autovalidateMode: AutovalidateMode.onUserInteraction,

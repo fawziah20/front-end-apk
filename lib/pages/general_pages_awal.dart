@@ -18,92 +18,86 @@ class GeneralPageAwal extends StatelessWidget {
       this.teks2});
   @override
   Widget build(BuildContext context) {
+    double deviceHeight = MediaQuery.of(context).size.height;
     var orientation = MediaQuery.of(context).orientation;
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          toolbarHeight: 1,
-        ),
         body: Stack(
-          children: [
-            SafeArea(
-              child: ListView(
-                // shrinkWrap: true,
-                padding: const EdgeInsets.only(
-                    top: 24, bottom: 0, left: 24, right: 24),
+      children: [
+        SafeArea(
+          child: ListView(
+            // shrinkWrap: true,
+            padding:
+                const EdgeInsets.only(top: 24, bottom: 0, left: 24, right: 24),
+            children: [
+              Column(
                 children: [
-                  Column(
-                    children: [
-                      Container(
-                        // height: MediaQuery.of(context).size.height * 9,
-                        width: double.infinity,
-                        height: 40,
-                        margin: EdgeInsets.only(bottom: 5),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: defaultMargin),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 25,
-                            ),
-                            Text(
-                              title,
-                              style: blackFontStyle.copyWith(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
-                              textAlign: TextAlign.center,
-                            ),
-                            SizedBox(
-                              child: Container(
-                                width: 25,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage("assets/plus.png"))),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      child ?? Container(),
-                    ],
-                  ),
                   Container(
-                          color: Colors.red,
-                          height: orientation == Orientation.portrait
-                              ? MediaQuery.of(context).size.height * 0.05
-                              : MediaQuery.of(context).size.height * 0.09,
-                          alignment: Alignment.bottomCenter,
-                          margin: EdgeInsets.only(bottom: 0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                teks1,
-                                style: TextStyle(fontSize: 12),
-                              ),
-                              // Text("Belum memiliki akun ? "),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    teks2,
-                                    // Text(
-                                    //   "Daftar sekarang",
-                                    style: TextStyle(
-                                        decoration: TextDecoration.underline,
-                                        color: greyColor3,
-                                        fontSize: 12),
-                                  ))
-                            ],
-                          )) ??
-                      Container(),
+                    // height: MediaQuery.of(context).size.height * 9,
+                    width: double.infinity,
+                    height: deviceHeight <= 768 ? 35 : 40,
+                    margin: EdgeInsets.only(bottom: 5),
+                    padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 25,
+                        ),
+                        Text(
+                          title,
+                          style: blackFontStyle.copyWith(
+                              fontSize: deviceHeight >= 768 ? 22 : 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(
+                          child: Container(
+                            width: 25,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage("assets/plus.png"))),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  child ?? Container(),
                 ],
               ),
-            ),
-          ],
-        ));
+              Container(
+                      height: orientation == Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.05
+                          : MediaQuery.of(context).size.height * 0.09,
+                      alignment: Alignment.bottomCenter,
+                      margin: EdgeInsets.only(bottom: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            teks1,
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          // Text("Belum memiliki akun ? "),
+                          TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                teks2,
+                                // Text(
+                                //   "Daftar sekarang",
+                                style: TextStyle(
+                                    decoration: TextDecoration.underline,
+                                    color: greyColor3,
+                                    fontSize: 12),
+                              ))
+                        ],
+                      )) ??
+                  Container(),
+            ],
+          ),
+        ),
+      ],
+    ));
   }
 }
