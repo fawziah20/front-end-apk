@@ -218,46 +218,52 @@ class _ProfilePageState extends State<ProfilePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                TextButton.icon(
-                                    onPressed: () {
-                                      showInformasi();
-                                    },
-                                    icon: CircleAvatar(
-                                      backgroundColor: blueColors,
-                                      radius: 18,
-                                      child: Icon(
-                                        Icons.person,
-                                        color: Colors.white,
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 10),
+                                  child: TextButton.icon(
+                                      onPressed: () {
+                                        showInformasi();
+                                      },
+                                      icon: CircleAvatar(
+                                        backgroundColor: blueColors,
+                                        radius: 18,
+                                        child: Icon(
+                                          Icons.person,
+                                          color: Colors.white,
+                                        ),
+                                        // child:Icons.alternate_email_rounded,
+                                        // color: Colors.blue,
                                       ),
-                                      // child:Icons.alternate_email_rounded,
-                                      // color: Colors.blue,
-                                    ),
-                                    label: Text(
-                                      "    Informasi Profil",
-                                      style: blackFontStyle3.copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14),
-                                    )),
-                                TextButton.icon(
-                                    onPressed: () {
-                                      Get.to(GantiPassword());
-                                    },
-                                    icon: CircleAvatar(
-                                      backgroundColor: blueColors,
-                                      radius: 18,
-                                      child: Icon(
-                                        Icons.lock_outline,
-                                        color: Colors.white,
+                                      label: Text(
+                                        "    Informasi Profil",
+                                        style: blackFontStyle3.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14),
+                                      )),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 10),
+                                  child: TextButton.icon(
+                                      onPressed: () {
+                                        Get.to(GantiPassword());
+                                      },
+                                      icon: CircleAvatar(
+                                        backgroundColor: blueColors,
+                                        radius: 18,
+                                        child: Icon(
+                                          Icons.lock_outline,
+                                          color: Colors.white,
+                                        ),
+                                        // child:Icons.alternate_email_rounded,
+                                        // color: Colors.blue,
                                       ),
-                                      // child:Icons.alternate_email_rounded,
-                                      // color: Colors.blue,
-                                    ),
-                                    label: Text(
-                                      "    Ganti Password",
-                                      style: blackFontStyle3.copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14),
-                                    )),
+                                      label: Text(
+                                        "    Ganti Password",
+                                        style: blackFontStyle3.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14),
+                                      )),
+                                ),
                                 TextButton.icon(
                                     onPressed: () => onLogOutpressed(),
                                     icon: CircleAvatar(
