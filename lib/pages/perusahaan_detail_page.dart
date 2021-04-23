@@ -11,6 +11,17 @@ class PerusahaanDetailPage extends StatefulWidget {
 }
 
 class _PerusahaanDetailPageState extends State<PerusahaanDetailPage> {
+  void share(BuildContext context, Perusahaan link) {
+    final RenderBox box = context.findRenderObject();
+    final String text = "${link.nama} - ${link.posisi}";
+
+    Share.share(
+      text,
+      subject: link.posisi,
+      sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
+    );
+  }
+
   int selectedIndex = 0;
 
   @override
@@ -55,10 +66,15 @@ class _PerusahaanDetailPageState extends State<PerusahaanDetailPage> {
                           margin: EdgeInsets.only(right: 24, top: 24),
                           width: 32,
                           height: 32,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/share.png'),
-                              fit: BoxFit.contain,
+                          child: CircleAvatar(
+                            backgroundColor:
+                                "4A81E7".toColor().withOpacity(0.2),
+                            child: IconButton(
+                              icon: Icon(Icons.share_outlined),
+                              iconSize: 16,
+                              onPressed: () {
+                                share(context, widget.userSave.perusahaan);
+                              },
                             ),
                           ),
                         ),

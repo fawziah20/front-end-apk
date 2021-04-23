@@ -15,7 +15,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: PerusahaanDetailPage(
+        userSave: UserSave(perusahaan: mockPerusahaan[3]),
+      ),
       theme: ThemeData(
           textTheme: TextTheme(
               title: TextStyle(
