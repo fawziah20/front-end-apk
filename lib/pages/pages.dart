@@ -32,3 +32,4 @@ part "ganti_password.dart";
 part 'sliver_page.dart';
 part 'cari.dart';
 part "kebijakan.dart";
+part "search.dart";

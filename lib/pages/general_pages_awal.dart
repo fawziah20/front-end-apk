@@ -18,20 +18,23 @@ class GeneralPageAwal extends StatelessWidget {
       this.teks2});
   @override
   Widget build(BuildContext context) {
+    double deviceHeight = MediaQuery.of(context).size.height;
+    var orientation = MediaQuery.of(context).orientation;
     return Scaffold(
         body: Stack(
       children: [
         SafeArea(
           child: ListView(
             // shrinkWrap: true,
-            padding: const EdgeInsets.all(20.0),
+            padding:
+                const EdgeInsets.only(top: 24, bottom: 0, left: 24, right: 24),
             children: [
               Column(
                 children: [
                   Container(
                     // height: MediaQuery.of(context).size.height * 9,
                     width: double.infinity,
-                    height: 40,
+                    height: deviceHeight <= 768 ? 35 : 40,
                     margin: EdgeInsets.only(bottom: 5),
                     padding: EdgeInsets.symmetric(horizontal: defaultMargin),
                     child: Row(
@@ -44,7 +47,7 @@ class GeneralPageAwal extends StatelessWidget {
                         Text(
                           title,
                           style: blackFontStyle.copyWith(
-                              fontSize: 22,
+                              fontSize: deviceHeight >= 768 ? 22 : 20,
                               fontWeight: FontWeight.bold,
                               color: Colors.black),
                           textAlign: TextAlign.center,
@@ -64,8 +67,11 @@ class GeneralPageAwal extends StatelessWidget {
                 ],
               ),
               Container(
-                      height: MediaQuery.of(context).size.height * 0.119,
+                      height: orientation == Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.05
+                          : MediaQuery.of(context).size.height * 0.09,
                       alignment: Alignment.bottomCenter,
+                      margin: EdgeInsets.only(bottom: 0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
