@@ -21,7 +21,7 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
         children: [
           Container(
             height: orientation == Orientation.portrait
-                ? MediaQuery.of(context).size.height * 0.52
+                ? MediaQuery.of(context).size.height * 0.50
                 : 400,
             child: Column(
               children: [

@@ -30,12 +30,12 @@ class CustomBottomLamaran extends StatelessWidget {
         ],
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           GestureDetector(
             onTap: () {},
             child: Container(
-              margin: EdgeInsets.only(right: 24),
               width: 60,
               height: 40,
               decoration: BoxDecoration(
@@ -58,7 +58,9 @@ class CustomBottomLamaran extends StatelessWidget {
               _openPopup(context);
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 68),
+              alignment: Alignment.center,
+              height: 40,
+              width: MediaQuery.of(context).size.width * 0.7,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 color: "75A6FF".toColor(),

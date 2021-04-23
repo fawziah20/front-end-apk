@@ -106,12 +106,10 @@ class _ProfilePageState extends State<ProfilePage> {
                             overflow: Overflow.visible,
                             children: [
                               Container(
-                                width: orientation == Orientation.portrait
-                                    ? 150
-                                    : 100,
-                                height: orientation == Orientation.portrait
-                                    ? 150
-                                    : 100,
+                                width:
+                                    MediaQuery.of(context).size.height * 0.23,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.23,
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -119,12 +117,10 @@ class _ProfilePageState extends State<ProfilePage> {
                                   shape: BoxShape.rectangle,
                                 ),
                                 child: Container(
-                                  width: orientation == Orientation.portrait
-                                      ? 150
-                                      : 100,
-                                  height: orientation == Orientation.portrait
-                                      ? 150
-                                      : 100,
+                                  width:
+                                      MediaQuery.of(context).size.height * 0.23,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.23,
                                   decoration: BoxDecoration(
                                       shape: BoxShape.rectangle,
                                       borderRadius: BorderRadius.circular(4),
@@ -222,46 +218,52 @@ class _ProfilePageState extends State<ProfilePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                TextButton.icon(
-                                    onPressed: () {
-                                      showInformasi();
-                                    },
-                                    icon: CircleAvatar(
-                                      backgroundColor: blueColors,
-                                      radius: 18,
-                                      child: Icon(
-                                        Icons.person,
-                                        color: Colors.white,
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 10),
+                                  child: TextButton.icon(
+                                      onPressed: () {
+                                        showInformasi();
+                                      },
+                                      icon: CircleAvatar(
+                                        backgroundColor: blueColors,
+                                        radius: 18,
+                                        child: Icon(
+                                          Icons.person,
+                                          color: Colors.white,
+                                        ),
+                                        // child:Icons.alternate_email_rounded,
+                                        // color: Colors.blue,
                                       ),
-                                      // child:Icons.alternate_email_rounded,
-                                      // color: Colors.blue,
-                                    ),
-                                    label: Text(
-                                      "    Informasi Profil",
-                                      style: blackFontStyle3.copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14),
-                                    )),
-                                TextButton.icon(
-                                    onPressed: () {
-                                      Get.to(GantiPassword());
-                                    },
-                                    icon: CircleAvatar(
-                                      backgroundColor: blueColors,
-                                      radius: 18,
-                                      child: Icon(
-                                        Icons.lock_outline,
-                                        color: Colors.white,
+                                      label: Text(
+                                        "    Informasi Profil",
+                                        style: blackFontStyle3.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14),
+                                      )),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 10),
+                                  child: TextButton.icon(
+                                      onPressed: () {
+                                        Get.to(GantiPassword());
+                                      },
+                                      icon: CircleAvatar(
+                                        backgroundColor: blueColors,
+                                        radius: 18,
+                                        child: Icon(
+                                          Icons.lock_outline,
+                                          color: Colors.white,
+                                        ),
+                                        // child:Icons.alternate_email_rounded,
+                                        // color: Colors.blue,
                                       ),
-                                      // child:Icons.alternate_email_rounded,
-                                      // color: Colors.blue,
-                                    ),
-                                    label: Text(
-                                      "    Ganti Password",
-                                      style: blackFontStyle3.copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14),
-                                    )),
+                                      label: Text(
+                                        "    Ganti Password",
+                                        style: blackFontStyle3.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14),
+                                      )),
+                                ),
                                 TextButton.icon(
                                     onPressed: () => onLogOutpressed(),
                                     icon: CircleAvatar(

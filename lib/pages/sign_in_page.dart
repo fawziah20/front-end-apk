@@ -31,6 +31,7 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
+    double deviceHeight = MediaQuery.of(context).size.height;
     bool isLoading = false;
     String email = "a@gmail.com";
     String pass = "12345678";
@@ -39,9 +40,8 @@ class _SignInPageState extends State<SignInPage> {
       teks1: "Belum Memiliki Akun ?",
       teks2: "Daftar Sekarang",
       child: Container(
-        color: Colors.green,
         height: orientation == Orientation.portrait
-            ? MediaQuery.of(context).size.height * 0.83
+            ? MediaQuery.of(context).size.height * 0.79
             : 470,
         child: Form(
           key: formkey,
@@ -49,13 +49,16 @@ class _SignInPageState extends State<SignInPage> {
             children: [
               Container(
                 margin: EdgeInsets.fromLTRB(
-                    defaultMargin, 28, defaultMargin, defaultMargin),
+                    defaultMargin,
+                    deviceHeight <= 768 ? deviceHeight * 0.02 : 28,
+                    defaultMargin,
+                    defaultMargin),
                 child: Text(
                   "Selamat Datang :)",
                   style: blackFontStyle.copyWith(
                       fontWeight: FontWeight.bold,
                       color: blueColors,
-                      fontSize: 20),
+                      fontSize: deviceHeight <= 768 ? 18 : 20),
                 ),
               ),
               Container(
@@ -75,14 +78,13 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                     Container(
-                      height: orientation == Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.08
-                          : MediaQuery.of(context).size.height * 0.17,
+                      margin: EdgeInsets.only(top: 10),
+                      height: deviceHeight <= 768 ? 40 : 50,
                       width: double.infinity,
                       child: TextFormField(
                         style: notif == false
                             ? blackFontStyle3.copyWith(
-                                fontWeight: FontWeight.normal)
+                                fontWeight: FontWeight.normal, fontSize: 14)
                             : blackFontStyle3.copyWith(
                                 fontWeight: FontWeight.normal,
                                 color: Colors.red),
@@ -115,14 +117,12 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                     Container(
-                      height: orientation == Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.08
-                          : MediaQuery.of(context).size.height * 0.2,
+                      height: deviceHeight <= 768 ? 40 : 50,
                       margin: EdgeInsets.only(top: 10),
                       child: TextFormField(
                         style: notif == false
                             ? blackFontStyle3.copyWith(
-                                fontWeight: FontWeight.normal)
+                                fontWeight: FontWeight.normal, fontSize: 14)
                             : blackFontStyle3.copyWith(
                                 fontWeight: FontWeight.normal,
                                 color: Colors.red),
@@ -245,7 +245,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 52),
+                      margin: EdgeInsets.only(top: deviceHeight * 0.05),
                       width: double.infinity,
                       child: Row(
                         children: [
