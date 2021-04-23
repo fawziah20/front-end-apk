@@ -29,51 +29,54 @@ class CustomBottomLamaran extends StatelessWidget {
           ),
         ],
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              margin: EdgeInsets.only(right: 24),
-              width: 60,
-              height: 40,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: "E6EDF4".toColor(),
-              ),
-              child: Container(
-                width: 26,
-                height: 24,
-                margin: EdgeInsets.symmetric(vertical: 8, horizontal: 17),
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/simpan_detail.png'),
-                        fit: BoxFit.fill)),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              _openPopup(context);
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 68),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: "75A6FF".toColor(),
-              ),
-              child: Text(
-                "Lamar Sekarang",
-                style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-        ],
-      ),
+
+      // child: Row(
+      //   mainAxisSize: MainAxisSize.max,
+      //   children: [
+      //     GestureDetector(
+      //       onTap: () {},
+      //       child: Container(
+      //         margin: EdgeInsets.only(right: 12, left: 24),
+      //         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+      //         decoration: BoxDecoration(
+      //           borderRadius: BorderRadius.circular(8),
+      //           color: "E6EDF4".toColor(),
+      //         ),
+      //         child: Container(
+      //           width: MediaQuery.of(context).size.width * 0.04,
+      //           height: MediaQuery.of(context).size.width * 0.04,
+      //           decoration: BoxDecoration(
+      //               image: DecorationImage(
+      //                   image: AssetImage('assets/simpan_detail.png'),
+      //                   fit: BoxFit.fill)),
+      //         ),
+      //       ),
+      //     ),
+      //     GestureDetector(
+      //       onTap: () {
+      //         _openPopup(context);
+      //       },
+      //       child: Container(
+      //         width: MediaQuery.of(context).size.width * 0.6,
+      //         margin: EdgeInsets.only(right: 24),
+      //         padding: EdgeInsets.symmetric(
+      //             vertical: 10,
+      //             horizontal: MediaQuery.of(context).size.width * 0.1),
+      //         decoration: BoxDecoration(
+      //           borderRadius: BorderRadius.circular(8),
+      //           color: "75A6FF".toColor(),
+      //         ),
+      //         child: Text(
+      //           "Lamar Sekarang",
+      //           style: TextStyle(
+      //               fontSize: 14,
+      //               color: Colors.white,
+      //               fontWeight: FontWeight.bold),
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

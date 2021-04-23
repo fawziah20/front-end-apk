@@ -79,6 +79,7 @@ class _LamaranSuksesState extends State<LamaranSukses> {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     GestureDetector(
                       onTap: () {

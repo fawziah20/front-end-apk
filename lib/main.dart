@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:latihan1/models/models.dart';
+import 'package:latihan1/widgets/lamaran_sukses.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'pages/pages.dart';
 
@@ -13,7 +15,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignInPage(),
+      home: PerusahaanDetailPage(
+        userSave: UserSave(perusahaan: mockPerusahaan[3]),
+      ),
       theme: ThemeData(
           textTheme: TextTheme(
               title: TextStyle(

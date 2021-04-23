@@ -59,7 +59,6 @@ class CustomBottomNavbar extends StatelessWidget {
             child: Container(
               width: 20,
               height: 20,
-              margin: EdgeInsets.symmetric(horizontal: 104),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
