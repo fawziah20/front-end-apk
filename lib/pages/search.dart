@@ -36,7 +36,7 @@ class _SearchState extends State<Search> {
               child: Text(
                 "Pilih Lokasi",
                 style: blackFontStyle3,
-              ))
+              )),
         ],
       ),
     );
