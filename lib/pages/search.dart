@@ -6,8 +6,15 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
+  List<int> value = [2];
+  List<S2Choice<int>> frameworks = [
+    S2Choice<int>(value: 1, title: 'Ionic'),
+    S2Choice<int>(value: 2, title: 'Flutter'),
+    S2Choice<int>(value: 3, title: 'React Native'),
+  ];
   @override
   Widget build(BuildContext context) {
+    bool _checked = false;
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.all(defaultMargin),
@@ -32,11 +39,22 @@ class _SearchState extends State<Search> {
             ),
           ),
           Container(
-              margin: EdgeInsets.only(top: 16),
-              child: Text(
-                "Pilih Lokasi",
-                style: blackFontStyle3,
-              ))
+            margin: EdgeInsets.only(top: 16),
+            child: Text(
+              "Pilih Lokasi",
+              style: blackFontStyle3,
+            ),
+          ),
+          CheckboxListTile(
+            title: Text("Yogyakarta"),
+            controlAffinity: ListTileControlAffinity.platform,
+            value: _checked,
+            onChanged: (bool value) {
+              setState(() {
+                _checked = value;
+              });
+            },
+          )
         ],
       ),
     );
