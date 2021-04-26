@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignInPage(),
+      home: Splash2(),
       theme: ThemeData(
           textTheme: TextTheme(
               title: TextStyle(
@@ -46,7 +46,7 @@ class Splash2 extends StatelessWidget {
             // height: MediaQuery.of(context).size.height * 0.7,
             child: SplashScreen(
               seconds: 6,
-              navigateAfterSeconds: new SignInPage(),
+              navigateAfterSeconds: new MainPage(),
               image: new Image.asset("assets/jogjakarir.png"),
               photoSize: orientation == Orientation.portrait ? 100.0 : 65,
               useLoader: false,

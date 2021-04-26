@@ -33,3 +33,4 @@ part 'sliver_page.dart';
 part 'cari.dart';
 part "kebijakan.dart";
 part "search.dart";
+part "riwayat_lamaranpage.dart";
