@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'package:latihan1/models/models.dart';
+
 import 'package:latihan1/widgets/lamaran_sukses.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'pages/pages.dart';
@@ -15,6 +18,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: Splash2(),
+
       theme: ThemeData(
           textTheme: TextTheme(
               title: TextStyle(
